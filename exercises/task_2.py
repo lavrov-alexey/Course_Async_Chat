@@ -13,6 +13,6 @@ if __name__ == '__main__':
     TEXT_WORDS = ('class', 'function', 'method')
 
     for text_word in TEXT_WORDS:
-        bytes_word = bytes(text_word, encoding='UTF-8')
+        bytes_word = bytes(text_word, encoding='ASCII')
         print(f'{text_word} ({type(text_word)}) => '
               f'{bytes_word} ({type(bytes_word)})')
