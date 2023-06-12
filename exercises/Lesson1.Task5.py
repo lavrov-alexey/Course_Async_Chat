@@ -13,7 +13,7 @@ if __name__ == '__main__':
     WEBSITES = ('yandex.ru', 'youtube.ru')
     for website in WEBSITES:
         ARGS.append(website)
-        # создаем подпроцесс запуска команды пинг, результат вывода перехватываем
+        # создаем подпроцесс для команды пинг, результат вывода перехватываем
         gb_ping = subprocess.Popen(ARGS, stdout=subprocess.PIPE)
 
         # выводим результат работы подпроцесса
