@@ -40,6 +40,7 @@ orders.json. При записи данных указать величину о
 также установить возможность работы с юникодом: allow_unicode = True;
 Реализовать считывание данных из созданного файла и проверить, совпадают ли они
 с исходными."""
+import re
 
 
 def detect_encode(file_name: str):
@@ -74,12 +75,32 @@ def detect_encode(file_name: str):
         print('Неожиданная ошибка! Что-то пошло не так!', end='')
         exit(2)
 
+def get_data(file_name: str, fields_for_parse: list):
+    """
+    Парсит переданный файл и возвращает словарь:
+    - ключ - поле (str) для поиска из переданного на вход списка полей
+    - значение - найденное значение параметра (str) в файле
+    :param file_name: имя файла для поиска в нём значений по списку полей
+    :param fields_for_parse: список полей для поиска значений в файле
+    :return: словарь ключ - имя параметра поиска, значение - найденное в файле
+    """
+
+    for field in fields_for_parse:
+        with open(file_name, 'r', encoding=detect_encode(file_name)) as fl:
+            fl_text = fl.read()
+
+        reg_exp = re.compile(fr'{field}:\s*(.+)')
+        result = reg_exp.findall(fl_text)[0]
+        print(f'{field}: {result}')
+
 
 if __name__ == '__main__':
 
     IN_FILES = ('info_1.txt', 'info_2.txt', 'info_3.txt')
     RES_FILE = 'result_pars.csv'
+    FIELDS = ['Изготовитель системы', 'Название ОС', 'Код продукта',
+              'Тип системы']
 
     for fl in IN_FILES:
-        fl_enc = detect_encode(fl)
-        
+        get_data(file_name=fl, fields_for_parse=FIELDS)
+
