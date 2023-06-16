@@ -68,88 +68,62 @@ def detect_encode(file_name: str):
                     break
             detector.close()
             return detector.result['encoding']
-    except FileNotFoundError:
-        print(f'Ошибка! Файл "{file_name}" не найден!', end='')
+    except FileNotFoundError as err:
+        print(f'Ошибка! Файл "{file_name}" не найден! {err}')
         exit(1)
-    except:
-        print('Неожиданная ошибка! Что-то пошло не так!', end='')
+    except Exception as err:
+        print(f'Неожиданная ошибка! Что-то пошло не так! {err}')
         exit(2)
 
 
-def parse_data(in_files: list, parse_fields: dict):
+def get_data(in_files: list, parse_fields: list):
+    """стуктура итогового (возвращаемого) результата:
+        {
+          file_name1: { param1: value1
+                        ...
+                        paramN: valueN }
+          ...
+          file_nameM: { param1: value1
+                        ...
+                        paramN: valueN }
+        }"""
+
     import re
+    from pprint import pprint
 
-    result = dict()
+    """создаем список скомпилированных регулярок для всех полей поиска
+    для каждого поля будем искать в файле значение на основании регулярки:
+    само поле в начале строки, потом двоеточие и пробельные символы,
+    потом до конца строки - группа символов до конца строки с искомым
+    значением (её и будем сохранять)"""
+    parse_regexps = [re.compile(fr'{parse_field}:\s*(.+)')
+                     for parse_field in parse_fields]
+    # можно глянуть - что получилось в итоге в списке
+    # for item in parse_regexps:
+    #     print(item, type(item))
 
-    # перебираем все файлы из списка
+    res_data = dict()
+    # читаем поочередно каждый из файлов списка целиком, кодировку - определяем
     for in_file in in_files:
-        # читаем содержимое файла
         try:
             with open(in_file, 'r', encoding=detect_encode(in_file)) as fn:
-                # читаем каждый из файлов целиком, кодировку - определяем сами
                 fn_text = fn.read()
         except Exception as err:
             print(f'Что-то пошло не так при открытии файла {in_file}: {err}')
-            exit(2)
+            exit(3)
 
+        # для каждого из полей регуляркой ищем в кажд. файле значение поля
+        file_values = dict()
+        for parse_regexp, parse_field in zip(parse_regexps, parse_fields):
+            parse_value = parse_regexp.findall(fn_text)[0]
+            file_values[parse_field] = parse_value
 
+        # сохраняем в итог. словарь - найденное в этом файле и переход к след.
+        res_data[in_file] = file_values
 
-def get_data(in_files: list, parse_fields: list):
-
-    import re
-
-    # os_prod_list, os_name_list, os_code_list, os_type_list = [], [], [], []
-    # main_data = [list(parse_fields.values())]
-    # print(f'{main_data=}, {type(main_data)=}')
-    # try:
-    #     reg_os_prod = re.compile(fr'{parse_fields["os_prod"]}:\s*(.+)')
-    #     reg_os_name = re.compile(fr'{parse_fields["os_name"]}:\s*(.+)')
-    #     reg_os_code = re.compile(fr'{parse_fields["os_code"]}:\s*(.+)')
-    #     reg_os_type = re.compile(fr'{parse_fields["os_type"]}:\s*(.+)')
-    # except Exception as err:
-    #     print(f'Что-то пошло не так при создании reg_exp: {err}')
-    #     exit(1)
-    #
-    # for in_file in in_files:
-    #     try:
-    #         with open(in_file, 'r', encoding=detect_encode(in_file)) as fn:
-    #             # читаем каждый из файлов целиком, кодировку - определяем сами
-    #             fn_text = fn.read()
-    #     except Exception as err:
-    #         print(f'Что-то пошло не так при открытии файла {in_file}: {err}')
-    #         exit(2)
-    #
-    #     os_prod_list.append(reg_os_prod.findall(fn_text)[0])
-    #     os_name_list.append(reg_os_name.findall(fn_text)[0])
-    #     os_code_list.append(reg_os_code.findall(fn_text)[0])
-    #     os_type_list.append(reg_os_type.findall(fn_text)[0])
-    #
-    # print(f'{os_prod_list=}\n{os_name_list=}\n{os_code_list=}\n{os_type_list=}')
-
-    for in_file in in_files:
-
-        with open(in_file, 'r', encoding=detect_encode(in_file)) as fn:
-            # читаем каждый из файлов целиком, кодировку - определяем сами
-            fn_text = fn.read()
-
-        for parse_field in parse_fields:
-            # для каждого поля ищем в файле значение на основании регулярки
-            # само поле в начале строки, потом двоеточие и пробельные символы,
-            # потом до конца строки - группа символов до конца строки с искомым
-            # значением (её и сохраняем)
-            reg_exp = re.compile(fr'{field_pattern}:\s*(.+)')
-            res_values.append(reg_exp.findall(fn_text)[0])
-
-        # добавляем в итоговый список - список найденных в файле значений
-        # и переходим к анализу следующего файла из списка
-        result.append(res_values)
-
-    # проверочная распечатка списка списков (заговков и найденных значений
-    # в каждом из файлов списка)
-    for _ in result:
-        print(_)
-
-    return res_values
+    # проверочная распечатка итоговой структуры парсинга всех файлов из списка
+    # pprint(res_data)
+    return res_data
 
 
 if __name__ == '__main__':
@@ -162,11 +136,5 @@ if __name__ == '__main__':
         'Код продукта',
         'Тип системы'
     ]
-    # FIELDS = {
-    #     'os_prod': 'Изготовитель системы',
-    #     'os_name': 'Название ОС',
-    #     'os_code': 'Код продукта',
-    #     'os_type': 'Тип системы'
-    # }
 
     res_values = get_data(in_files=IN_FILES, parse_fields=FIELDS)
