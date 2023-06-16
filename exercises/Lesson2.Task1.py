@@ -76,25 +76,69 @@ def detect_encode(file_name: str):
         exit(2)
 
 
-def get_data(in_files: list, fields_for_parse: list, res_file='result.csv'):
+def parse_data(in_files: list, parse_fields: dict):
+    import re
+
+    result = dict()
+
+    # перебираем все файлы из списка
+    for in_file in in_files:
+        # читаем содержимое файла
+        try:
+            with open(in_file, 'r', encoding=detect_encode(in_file)) as fn:
+                # читаем каждый из файлов целиком, кодировку - определяем сами
+                fn_text = fn.read()
+        except Exception as err:
+            print(f'Что-то пошло не так при открытии файла {in_file}: {err}')
+            exit(2)
+
+
+
+def get_data(in_files: list, parse_fields: list):
 
     import re
 
-    result = [fields_for_parse]
+    # os_prod_list, os_name_list, os_code_list, os_type_list = [], [], [], []
+    # main_data = [list(parse_fields.values())]
+    # print(f'{main_data=}, {type(main_data)=}')
+    # try:
+    #     reg_os_prod = re.compile(fr'{parse_fields["os_prod"]}:\s*(.+)')
+    #     reg_os_name = re.compile(fr'{parse_fields["os_name"]}:\s*(.+)')
+    #     reg_os_code = re.compile(fr'{parse_fields["os_code"]}:\s*(.+)')
+    #     reg_os_type = re.compile(fr'{parse_fields["os_type"]}:\s*(.+)')
+    # except Exception as err:
+    #     print(f'Что-то пошло не так при создании reg_exp: {err}')
+    #     exit(1)
+    #
+    # for in_file in in_files:
+    #     try:
+    #         with open(in_file, 'r', encoding=detect_encode(in_file)) as fn:
+    #             # читаем каждый из файлов целиком, кодировку - определяем сами
+    #             fn_text = fn.read()
+    #     except Exception as err:
+    #         print(f'Что-то пошло не так при открытии файла {in_file}: {err}')
+    #         exit(2)
+    #
+    #     os_prod_list.append(reg_os_prod.findall(fn_text)[0])
+    #     os_name_list.append(reg_os_name.findall(fn_text)[0])
+    #     os_code_list.append(reg_os_code.findall(fn_text)[0])
+    #     os_type_list.append(reg_os_type.findall(fn_text)[0])
+    #
+    # print(f'{os_prod_list=}\n{os_name_list=}\n{os_code_list=}\n{os_type_list=}')
+
     for in_file in in_files:
 
-        with open(in_file, 'r', encoding=detect_encode(in_file)) as f_n:
+        with open(in_file, 'r', encoding=detect_encode(in_file)) as fn:
             # читаем каждый из файлов целиком, кодировку - определяем сами
-            f_n_text = f_n.read()
+            fn_text = fn.read()
 
-        res_values = []  # сюда будем складывать найденные в файле значения
-        for field in fields_for_parse:
+        for parse_field in parse_fields:
             # для каждого поля ищем в файле значение на основании регулярки
             # само поле в начале строки, потом двоеточие и пробельные символы,
             # потом до конца строки - группа символов до конца строки с искомым
             # значением (её и сохраняем)
-            reg_exp = re.compile(fr'{field}:\s*(.+)')
-            res_values.append(reg_exp.findall(f_n_text)[0])
+            reg_exp = re.compile(fr'{field_pattern}:\s*(.+)')
+            res_values.append(reg_exp.findall(fn_text)[0])
 
         # добавляем в итоговый список - список найденных в файле значений
         # и переходим к анализу следующего файла из списка
@@ -112,7 +156,17 @@ if __name__ == '__main__':
 
     IN_FILES = ('info_1.txt', 'info_2.txt', 'info_3.txt')
     RES_FILE = 'result_pars.csv'
-    FIELDS = ['Изготовитель системы', 'Название ОС', 'Код продукта',
-              'Тип системы']
+    FIELDS = [
+        'Изготовитель системы',
+        'Название ОС',
+        'Код продукта',
+        'Тип системы'
+    ]
+    # FIELDS = {
+    #     'os_prod': 'Изготовитель системы',
+    #     'os_name': 'Название ОС',
+    #     'os_code': 'Код продукта',
+    #     'os_type': 'Тип системы'
+    # }
 
-    res_values = get_data(in_files=IN_FILES, fields_for_parse=FIELDS)
+    res_values = get_data(in_files=IN_FILES, parse_fields=FIELDS)
