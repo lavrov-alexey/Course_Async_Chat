@@ -20,11 +20,16 @@ os_type_list. В этой же функции создать главный сп
 В этой функции реализовать получение данных через вызов функции get_data(),
 а также сохранение подготовленных данных в соответствующий CSV-файл;
 
-3. Проверить работу программы через вызов функции write_to_csv()."""
+3. Проверить работу программы через вызов функции write_to_csv().
+
+P.S. Для удобства работы с данными - использована немного другая структура
+хранения, чем в ТЗ.
+"""
+
 from pprint import pprint
 
 
-def detect_encode(file_name: str) -> None:
+def detect_encode(file_name: str) -> str:
     """
     Возвращает автоматически определенную кодировку переданного на вход файла с
     использованием утилиты chardet. Файл читается построчно до достижения
@@ -57,7 +62,7 @@ def detect_encode(file_name: str) -> None:
         exit(2)
 
 
-def get_data(in_files: list, parse_fields: list):
+def get_data(in_files: list, parse_fields: list) -> dict:
     """
     Парсит переданный на вход список текстовых файлов для отбора значений
     переданного списка полей
@@ -140,9 +145,13 @@ def write_parsed_data_to_csv(pars_data: dict, csv_file_name='parsed_data.csv',
     #     print(line)
 
     # сохраняем итоговый список в файл
-    with open(csv_file_name, 'w', encoding=encoding) as fl:
-        fl_writer = csv.writer(fl)
-        fl_writer.writerows(res_data)
+    try:
+        with open(csv_file_name, 'w', encoding=encoding) as fl:
+            fl_writer = csv.writer(fl)
+            fl_writer.writerows(res_data)
+    except Exception as err:
+        print(f'Что-то пошло не так при записи результата в файл: {err}')
+        exit(4)
 
 
 if __name__ == '__main__':
