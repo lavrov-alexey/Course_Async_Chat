@@ -1,7 +1,7 @@
 """ Общие вспомогательные утилиты для проекта """
 import json
 import socket
-import common.variables as vars
+import common.variables as prj_vars
 
 
 def detect_encode(file_name: str) -> str:
@@ -46,10 +46,10 @@ def get_message(sock: socket) -> dict:
     """
 
     # читаем из сокета данные (с учетом ограничений настройки проекта)
-    encoded_response = sock.recv(vars.MAX_PACKAGE_LENGTH)
+    encoded_response = sock.recv(prj_vars.MAX_PACKAGE_LENGTH)
     if isinstance(encoded_response, bytes):
         # если это байты - декодируем их в JSON-строку кодировкой проекта
-        json_response = encoded_response.decode(vars.ENCODING)
+        json_response = encoded_response.decode(prj_vars.ENCODING)
         # из JSON-строки переводим в Python-объекты
         response = json.loads(json_response)
         # если получился словарь - отдаём, если нет - поднимаем ошибку значения
@@ -70,6 +70,6 @@ def send_message(sock: socket, message: dict) -> None:
     # переводим сообщение (словарь) в JSON-строку
     json_message = json.dumps(message)
     # кодируем JSON-строку в байты в кодировке проекта
-    encoded_message = json_message.encode(vars.ENCODING)
+    encoded_message = json_message.encode(prj_vars.ENCODING)
     # отправляем закодированные байты в сокет
     sock.send(encoded_message)
