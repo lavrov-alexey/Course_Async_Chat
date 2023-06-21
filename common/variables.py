@@ -10,6 +10,8 @@ MAX_CONNECTIONS = 5
 MAX_PACKAGE_LENGTH = 1024
 # Используемая в проекте кодировка текста
 ENCODING = 'utf-8'
+LOW_PORT_RANGE = 1024  # меньше - служебные порты
+HIGH_PORT_RANGE = 65535  # больше не может быть по определению
 
 # Взаимодействие по протоколу JIM (передача JSON-объектов через TCP-сокеты).
 # JIM. Основные ключи:
@@ -22,3 +24,5 @@ ACCOUNT_NAME = 'account_name'
 PRESENCE = 'presence'
 RESPONSE = 'response'
 ERROR = 'error'
+BAD_REQUEST = 'Bad Request'
+GUEST = 'guest'
