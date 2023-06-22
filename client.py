@@ -1,5 +1,5 @@
 """ Скрипт клиентской программы асинхронного чата """
-
+from pprint import pprint
 from sys import argv
 import json
 from socket import socket, AF_INET, SOCK_STREAM
@@ -76,12 +76,18 @@ def main() -> None:
     # формируем и отправляем на сервер сообщение о присутствии в формате JIM
     message_to_serv = create_presense()
     send_message(JIM_socket, message_to_serv)
+    print(f'На сервер адрес: {serv_addr}, порт: {serv_port}\n'
+          f'Направлено сообщение:')
+    pprint(message_to_serv)
     try:
         # получаем ответ от сервера и парсим его
         answer = process_ans(get_message(JIM_socket))
-        print(f'{answer=}')
+        print('От сервера получен ответ:')
+        pprint(answer)
     except (ValueError, json.JSONDecodeError) as err:
         print(f'Не удалось декодировать сообщение от сервера: {err}')
+
+    input('Нажмите Enter для завершения...')
 
 
 if __name__ == '__main__':

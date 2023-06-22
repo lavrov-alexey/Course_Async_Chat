@@ -1,4 +1,5 @@
 import json
+from pprint import pprint
 from socket import socket, AF_INET, SOCK_STREAM
 from sys import argv
 from common.variables import ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, GUEST,\
@@ -86,16 +87,22 @@ def main() -> None:
     while True:
         # при поступлении запроса - принимаем объект клиентского сокета и адрес
         client_sock, client_addr_port = JIM_socket.accept()
-        print(f'{client_sock=}, {client_addr_port=}')
+        client_addr, client_port = client_addr_port
+        print(f'\nУстановлено соединение с клиентом, адрес: {client_addr=}, '
+              f'порт: {client_port=}')
 
         try:
             message_from_client = get_message(client_sock)
             # полученные из сокета байты - возвращаются в виде словаря
-            print(f'{message_from_client=}')
+            print('Полученное сообщение от клиента:')
+            pprint(message_from_client)
             # разбираем полученный словарь на служ. инфо JIM и само сообщение
             response = process_client_message(message_from_client)
             send_message(client_sock, response)
+            print('Клиенту отправлен ответ:')
+            pprint(response)
             client_sock.close()  # после отправки ответа - закрываем кл. сокет
+            print('Соединение с клиентом закрыто!\n')
         except(ValueError, json.JSONDecodeError) as err:
             print(f'Получено некорректное сообщение от клиента '
                   f'{client_addr_port}, ошибка: {err}')
