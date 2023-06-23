@@ -1,7 +1,7 @@
 import unittest
 from os import remove
 from os.path import exists
-from common import utils
+from common.utils import detect_encode
 
 FILE_UTF_8 = 'test_file_utf-8.tst'
 FILE_CP1251 = 'test_file_cp1251.tst'
@@ -10,7 +10,7 @@ ENC_CP1251 = 'windows-1251'
 TEST_STR = 'Тестовый файл в кодировке '
 
 
-class MyTestCase(unittest.TestCase):
+class TestDetectEncode(unittest.TestCase):
 
     def setUp(self) -> None:
         with open(FILE_UTF_8, 'w', encoding=ENC_UTF_8) as f:
@@ -25,11 +25,24 @@ class MyTestCase(unittest.TestCase):
         if exists(FILE_CP1251):
             remove(FILE_CP1251)
 
-    def test_detect_encode_utf_8(self):
-        self.assertEqual(utils.detect_encode(FILE_UTF_8), ENC_UTF_8)
+    def test_encode_utf_8(self):
+        self.assertEqual(detect_encode(FILE_UTF_8), ENC_UTF_8)
 
-    def test_detect_encode_cp1251(self):
-        self.assertEqual(utils.detect_encode(FILE_CP1251), ENC_CP1251)
+    def test_encode_cp1251(self):
+        self.assertEqual(detect_encode(FILE_CP1251), ENC_CP1251)
+
+    def test_encode_no_file(self):
+        self.assertRaises(SystemExit, detect_encode, '')
+
+    def test_encode_wo_param(self):
+        self.assertRaises(TypeError, detect_encode, )
+
+class TestServer(unittest.TestCase):
+    """
+    Тестируемые функции:
+    process_client_message(message: dict) -> dict:
+    """
+
 
 
 if __name__ == '__main__':
