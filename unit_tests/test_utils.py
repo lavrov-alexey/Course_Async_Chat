@@ -1,6 +1,8 @@
 import unittest
 from os import remove
 from os.path import exists
+from socket import socket, AF_INET, SOCK_STREAM
+
 from common.utils import detect_encode
 
 FILE_UTF_8 = 'test_file_utf-8.tst'
@@ -37,11 +39,13 @@ class TestDetectEncode(unittest.TestCase):
     def test_encode_wo_param(self):
         self.assertRaises(TypeError, detect_encode, )
 
-class TestServer(unittest.TestCase):
-    """
-    Тестируемые функции:
-    process_client_message(message: dict) -> dict:
-    """
+class TestGetMessage(unittest.TestCase):
+
+    def setUp(self) -> None:
+        test_sock = socket(AF_INET, SOCK_STREAM)
+        test_sock.bind(('localhost', 3333))
+
+
 
 
 

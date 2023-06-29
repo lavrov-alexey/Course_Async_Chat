@@ -22,6 +22,7 @@ def process_client_message(message: dict) -> dict:
             message[ACTION] == PRESENCE and \
             TIME in message and \
             USER in message and \
+            ACCOUNT_NAME in message[USER] and \
             message[USER][ACCOUNT_NAME] == GUEST:
         # если все соответствует - отвечаем 200 (ок)
         return {RESPONSE: 200}
