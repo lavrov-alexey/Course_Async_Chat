@@ -12,7 +12,7 @@ ENC_CP1251 = 'windows-1251'
 TEST_STR = 'Тестовый файл в кодировке '
 
 
-class TestDetectEncode(unittest.TestCase):
+class TestUtils(unittest.TestCase):
 
     def setUp(self) -> None:
         with open(FILE_UTF_8, 'w', encoding=ENC_UTF_8) as f:
@@ -21,12 +21,16 @@ class TestDetectEncode(unittest.TestCase):
         with open(FILE_CP1251, 'w', encoding=ENC_CP1251) as f:
             f.write(TEST_STR + ENC_CP1251)
 
+        # test_sock = socket(AF_INET, SOCK_STREAM)
+        # test_sock.bind(('localhost', 3333))
+
     def tearDown(self) -> None:
         if exists(FILE_UTF_8):
             remove(FILE_UTF_8)
         if exists(FILE_CP1251):
             remove(FILE_CP1251)
 
+    # ================ detect_encode ================
     def test_encode_utf_8(self):
         self.assertEqual(detect_encode(FILE_UTF_8), ENC_UTF_8)
 
@@ -38,15 +42,6 @@ class TestDetectEncode(unittest.TestCase):
 
     def test_encode_wo_param(self):
         self.assertRaises(TypeError, detect_encode, )
-
-class TestGetMessage(unittest.TestCase):
-
-    def setUp(self) -> None:
-        test_sock = socket(AF_INET, SOCK_STREAM)
-        test_sock.bind(('localhost', 3333))
-
-
-
 
 
 if __name__ == '__main__':
