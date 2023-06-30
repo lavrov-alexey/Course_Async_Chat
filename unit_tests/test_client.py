@@ -34,5 +34,6 @@ class TestClient(unittest.TestCase):
     def test_proc_answ_no_resp(self):
         self.assertRaises(ValueError, process_answ, {ERROR: BAD_REQUEST})
 
+
 if __name__ == '__main__':
     unittest.main()
