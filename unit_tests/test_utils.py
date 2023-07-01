@@ -21,9 +21,6 @@ class TestUtils(unittest.TestCase):
         with open(FILE_CP1251, 'w', encoding=ENC_CP1251) as f:
             f.write(TEST_STR + ENC_CP1251)
 
-        # test_sock = socket(AF_INET, SOCK_STREAM)
-        # test_sock.bind(('localhost', 3333))
-
     def tearDown(self) -> None:
         if exists(FILE_UTF_8):
             remove(FILE_UTF_8)
