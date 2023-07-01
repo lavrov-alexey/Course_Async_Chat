@@ -1,5 +1,5 @@
 """ Скрипт клиентской программы асинхронного чата """
-
+from pprint import pprint
 from sys import argv
 import json
 from socket import socket, AF_INET, SOCK_STREAM
@@ -27,7 +27,7 @@ def create_presense(account_name=GUEST) -> dict:
     return presence_msg
 
 
-def process_ans(message: dict) -> str:
+def process_answ(message: dict) -> str:
     """
     Разбирает ответное сообщение сервера по протоколу JIM
     :param message:  Словарь с параметрами и текстом сообщения от сервера
@@ -37,7 +37,7 @@ def process_ans(message: dict) -> str:
     if RESPONSE in message:
         # и если ответ 200 - всё хорошо
         if message[RESPONSE] == 200:
-            return '200: ОК'
+            return '200: OK'
         # если ответ не 200 - ругаемся
         return f'400: {message[ERROR]}'
     # а если ключа "ответ" нет в сообщении - ошибка протокола JIM
@@ -76,12 +76,18 @@ def main() -> None:
     # формируем и отправляем на сервер сообщение о присутствии в формате JIM
     message_to_serv = create_presense()
     send_message(JIM_socket, message_to_serv)
+    print(f'На сервер адрес: {serv_addr}, порт: {serv_port}\n'
+          f'Направлено сообщение:')
+    pprint(message_to_serv)
     try:
         # получаем ответ от сервера и парсим его
-        answer = process_ans(get_message(JIM_socket))
-        print(f'{answer=}')
+        answer = process_answ(get_message(JIM_socket))
+        print('От сервера получен ответ:')
+        pprint(answer)
     except (ValueError, json.JSONDecodeError) as err:
         print(f'Не удалось декодировать сообщение от сервера: {err}')
+
+    input('Нажмите Enter для завершения...')
 
 
 if __name__ == '__main__':
