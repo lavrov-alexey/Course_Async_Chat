@@ -1,4 +1,5 @@
 """ Константы для работы проекта """
+import logging
 
 # Порт по умолчанию для сетевого взаимодействия
 DEFAULT_PORT = 7777
@@ -26,3 +27,15 @@ RESPONSE = 'RESPONSE'
 ERROR = 'ERROR'
 BAD_REQUEST = 'BAD REQUEST'
 GUEST = 'GUEST'
+
+# Logging config params
+SRV_LOG_FILE_NAME = 'async_chat_srv.log'
+SRV_LOGGER = 'async_chat_log.serv'
+
+CLIENT_LOG_FILE_NAME = 'async_chat_client.log'
+CLIENT_LOGGER = 'async_chat_log.client'
+
+LOGS_FORMAT = '%(asctime)-30s %(levelname)-10s %(module)-20s %(message)s'
+LOG_LVL_CONSOLE = logging.ERROR
+LOG_LVL_FILE = logging.DEBUG
+LOG_LVL_BASE = logging.ERROR
