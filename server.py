@@ -1,11 +1,13 @@
+import argparse
 import json
 import logging
+import sys
 from pprint import pprint
 from socket import socket, AF_INET, SOCK_STREAM
 from sys import argv
-from common.variables import ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, GUEST,\
+from common.variables import ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, GUEST, \
     DEFAULT_PORT, MAX_CONNECTIONS, RESPONSE, ERROR, BAD_REQUEST, \
-    LOW_PORT_RANGE, HIGH_PORT_RANGE, SRV_LOGGER
+    LOW_PORT_RANGE, HIGH_PORT_RANGE, SRV_LOGGER, SRV_PORT_KEY, SRV_ADDR_KEY
 from common.utils import get_message, send_message
 import logs.configs.server_log_config
 
@@ -46,6 +48,20 @@ def process_client_message(message: dict) -> dict:
     return response
 
 
+def create_arg_parser():
+    """
+    Парсер аргументов командной строки
+    :return:
+    """
+    # создаем объект парсера и вытаскиваем по ключам адрес и порт
+    parser = argparse.ArgumentParser()
+    # если порт не задан явно - используем по умолчанию из конфига
+    parser.add_argument(SRV_PORT_KEY, default=DEFAULT_PORT, type=int, nargs='?')
+    # если адрес не задан явно - будем слушать всё
+    parser.add_argument(SRV_ADDR_KEY, default='', nargs='?')
+    return parser
+
+
 def main() -> None:
     """
     Загрузка параметров командной строки, если параметры не переданы - задаются
@@ -55,54 +71,35 @@ def main() -> None:
     :return: None
     """
 
-    PORT = '-p'  # ключ для передачи номера порта
-    ADDR = '-a'  # ключ для передачи адреса для прослушивания
-
     # логируем параметры - запуска сервера
     SRV_LOGGER.debug(f'Запуск сервера с параметрами: {argv[1:]}')
 
-    # устанавливаем порт для прослушивания (по умолчанию или заданны)
+    # создаём парсер и передаем для разбора параметры (без имени самого файла)
+    parser = create_arg_parser()
     try:
-        params = argv[1:]  # имя самого скрипта откидываем - только пар-ры
-        if PORT in params:
-            # сам номер порта - следующее значение после параметра '-p'
-            port_num_str = params[params.index(PORT) + 1]
-            listen_port = int(port_num_str)
-        else:
-            listen_port = DEFAULT_PORT
+        namespace = parser.parse_args(sys.argv[1:])
+    except Exception as err:
+        SRV_LOGGER.critical(f'Ошибка обработки параметров запуска сервера: '
+                            f'{err}')
+        exit(1)
+    # сохраняем распарсенные адрес и порт, заданные в параметрах запуска скрипта
+    listen_addr = namespace.a
+    listen_port = namespace.p
 
-        # логируем параметры - порт запуска сервера
-        SRV_LOGGER.debug(f'- порт сервера: {listen_port}')
+    # логируем параметры - адрес и порт запуска сервера
+    SRV_LOGGER.debug(f'- порт сервера: {listen_port}')
+    SRV_LOGGER.debug(f'- адрес сервера: {listen_addr}')
 
-        # проверяем, чтобы номер порта был релевантным
+    # проверяем, чтобы номер порта был релевантным
+    try:
         if listen_port < LOW_PORT_RANGE or listen_port > HIGH_PORT_RANGE:
             raise ValueError
-    except IndexError as err:
-        # логируем ошибку "не указан номер порта"
-        SRV_LOGGER.critical(f'После параметра "{PORT}" нужно указать номер '
-                            f'порта: {err}')
     except ValueError as err:
         # логируем ошибку "некорректный номер порта"
         SRV_LOGGER.critical(f'Номер порта может быть только числом в диапазоне '
                             f'от {LOW_PORT_RANGE} до {HIGH_PORT_RANGE}. '
-                            f'Получено: "{port_num_str}".\nОшибка: {err}')
-        exit(1)
-
-    # устанавливаем адрес для прослушивания
-    try:
-        if ADDR in params:
-            # сам номер порта - след. значение после параметра '-a'
-            listen_addr = params[params.index(ADDR) + 1]
-        else:
-            listen_addr = ''  # если не задан - слушаем все
-
-    except IndexError as err:
-        SRV_LOGGER.critical(f'После параметра "{ADDR}" не указан IP-адрес для '
-                            f'прослушивания сервером: {err}')
+                            f'Получено: "{listen_port}".\nОшибка: {err}')
         exit(2)
-
-    # логируем параметры - адрес запуска сервера
-    SRV_LOGGER.debug(f'- адрес сервера: {listen_addr}')
 
     # создаем (сетевой, потоковый) сокет, привязываем его и начинаем слушать
     JIM_socket = socket(AF_INET, SOCK_STREAM)
