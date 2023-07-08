@@ -4,12 +4,17 @@ from sys import argv
 import json
 from socket import socket, AF_INET, SOCK_STREAM
 import time
+import logging
 
 from common.utils import get_message, send_message
 from common.variables import RESPONSE, ERROR, LOW_PORT_RANGE, HIGH_PORT_RANGE, \
     DEFAULT_PORT, DEFAULT_IP_ADDRESS, GUEST, ACTION, PRESENCE, TIME, USER, \
-    ACCOUNT_NAME
+    ACCOUNT_NAME, CLIENT_LOGGER
+import logs.configs.client_log_config
 
+
+# запуск логирования клиента (получаем клиент. логгер из файла конфига)
+LOGGER = logging.getLogger(CLIENT_LOGGER)
 
 def create_presense(account_name=GUEST) -> dict:
     """
@@ -24,6 +29,7 @@ def create_presense(account_name=GUEST) -> dict:
             ACCOUNT_NAME: account_name
         }
     }
+    LOGGER.info(f'Создано сообщение присутствия: {presence_msg}')
     return presence_msg
 
 
@@ -33,14 +39,20 @@ def process_answ(message: dict) -> str:
     :param message:  Словарь с параметрами и текстом сообщения от сервера
     :return: Строка с кодом ответа и его текстом
     """
+    LOGGER.debug(f'Для обработки получено сообщение: {message}')
     # проверяем - есть ли в сообщении есть ключ ответа
     if RESPONSE in message:
         # и если ответ 200 - всё хорошо
         if message[RESPONSE] == 200:
-            return '200: OK'
+            response = '200: OK'
+            LOGGER.debug(f'Ответ сервера успешный: {response}')
+            return response
         # если ответ не 200 - ругаемся
-        return f'400: {message[ERROR]}'
+        response = f'400: {message[ERROR]}'
+        LOGGER.warning(f'Ответ сервера с ошибкой: {response}')
+        return response
     # а если ключа "ответ" нет в сообщении - ошибка протокола JIM
+    LOGGER.critical(f'В ответе сервера нет ключа "response"!')
     raise ValueError
 
 
@@ -53,10 +65,12 @@ def main() -> None:
     :return:
     """
 
+    LOGGER.debug(f'Параметры вызова: {argv[1:]=}')
     try:
         # в 1-м параметре запуска клиентского скрипта ждём адрес, 2й - порт
         serv_addr = argv[1]
         serv_port = int(argv[2])
+        LOGGER.debug(f'Cервер - адрес: {serv_addr}, порт: {serv_port}')
 
         # валидируем полученный порт сервера
         if serv_port < LOW_PORT_RANGE or serv_port > HIGH_PORT_RANGE:
@@ -64,9 +78,12 @@ def main() -> None:
     except IndexError as err:
         serv_addr = DEFAULT_IP_ADDRESS
         serv_port = DEFAULT_PORT
+        LOGGER.debug(f'Используются значения адреса и порта сервера '
+                     f'по умолчанию: {DEFAULT_IP_ADDRESS}:{DEFAULT_PORT}')
     except ValueError as err:
-        print(f'Порт сервера должен быть числом в диапазоне {LOW_PORT_RANGE}-'
-              f'{HIGH_PORT_RANGE}. Получено: "{serv_port}". Ошибка: {err}')
+        LOGGER.critical(f'Порт сервера должен быть числом в диапазоне '
+                        f'{LOW_PORT_RANGE}-{HIGH_PORT_RANGE}. '
+                        f'Получено: "{serv_port}". Ошибка: {err}')
         exit(1)
 
     # создаем объект клиент. сокета (сетевой, потоковый), подключаемся к серверу
@@ -76,17 +93,17 @@ def main() -> None:
     # формируем и отправляем на сервер сообщение о присутствии в формате JIM
     message_to_serv = create_presense()
     send_message(JIM_socket, message_to_serv)
-    print(f'На сервер адрес: {serv_addr}, порт: {serv_port}\n'
-          f'Направлено сообщение:')
-    pprint(message_to_serv)
+    # print(f'На сервер адрес: {serv_addr}, порт: {serv_port}\n'
+    #       f'Направлено сообщение:')
+    # pprint(message_to_serv)
+    LOGGER.debug(f'На сервер адрес: {serv_addr}, порт: {serv_port} '
+                 f'направлено сообщение: {message_to_serv}')
     try:
         # получаем ответ от сервера и парсим его
         answer = process_answ(get_message(JIM_socket))
-        print('От сервера получен ответ:')
-        pprint(answer)
+        LOGGER.info(f'От сервера получен ответ: {answer}')
     except (ValueError, json.JSONDecodeError) as err:
-        print(f'Не удалось декодировать сообщение от сервера: {err}')
-
+        LOGGER.error(f'Не удалось декодировать сообщение от сервера: {err}')
     input('Нажмите Enter для завершения...')
 
 
