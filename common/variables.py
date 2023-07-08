@@ -1,5 +1,6 @@
 """ Константы для работы проекта """
 import logging
+import os.path
 
 # Порт по умолчанию для сетевого взаимодействия
 DEFAULT_PORT = 7777
@@ -28,14 +29,19 @@ ERROR = 'ERROR'
 BAD_REQUEST = 'BAD REQUEST'
 GUEST = 'GUEST'
 
-# Logging config params
-SRV_LOG_FILE_NAME = 'async_chat_srv.log'
-SRV_LOGGER = 'async_chat_log.serv'
+# Параметры логирования проекта
+# задаем путь к папке с логами, относительно текущего файла с параметрами
+LOGS_DIR = os.path.dirname(os.path.abspath(__file__))
+LOGS_DIR = os.path.join(LOGS_DIR, '..', 'logs')
 
-CLIENT_LOG_FILE_NAME = 'async_chat_client.log'
-CLIENT_LOGGER = 'async_chat_log.client'
+# задаем названия логгеров и файлов логов для сервера и клиента
+SRV_LOG_FILE_NAME = os.path.join(LOGS_DIR, 'async_chat_srv.log')
+SRV_LOGGER = 'async_chat_log_serv'
+CLIENT_LOG_FILE_NAME = os.path.join(LOGS_DIR, 'async_chat_client.log')
+CLIENT_LOGGER = 'async_chat_log_client'
 
+# определяем формат записи логов (строка форматтера) и задаем уровни логирования
 LOGS_FORMAT = '%(asctime)-30s %(levelname)-10s %(module)-20s %(message)s'
-LOG_LVL_CONSOLE = logging.ERROR
+LOG_LVL_CONSOLE = logging.DEBUG
 LOG_LVL_FILE = logging.DEBUG
-LOG_LVL_BASE = logging.ERROR
+LOG_LVL_BASE = logging.DEBUG

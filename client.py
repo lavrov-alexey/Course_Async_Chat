@@ -65,7 +65,7 @@ def main() -> None:
     :return:
     """
 
-    LOGGER.debug(f'Параметры вызова: {argv[1:]}')
+    LOGGER.debug(f'Параметры вызова: {argv[1:]=}')
     try:
         # в 1-м параметре запуска клиентского скрипта ждём адрес, 2й - порт
         serv_addr = argv[1]
