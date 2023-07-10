@@ -9,12 +9,18 @@ from common.variables import ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, GUEST, 
     DEFAULT_PORT, MAX_CONNECTIONS, RESPONSE, ERROR, BAD_REQUEST, \
     LOW_PORT_RANGE, HIGH_PORT_RANGE, SRV_LOGGER, SRV_PORT_KEY, SRV_ADDR_KEY
 from common.utils import get_message, send_message
+from common.decorators import logging_deco
+# подтягиваем готовый конфиг логгера
 import logs.configs.server_log_config
+from common.utils import choice_logger
 
 # запуск логирования сервера (получаем серв. логгер из файла конфига)
-SRV_LOGGER = logging.getLogger(SRV_LOGGER)
+# SRV_LOGGER = logging.getLogger(SRV_LOGGER)
+# выбираем логгер автоматом по имени скрипта (1й параметр при запуске)
+SRV_LOGGER = choice_logger(sys.argv[0])
 
 
+@logging_deco
 def process_client_message(message: dict) -> dict:
     """
     Обрабатывает сообщения от клиентов, принимает словарь по протоколу JIM,
@@ -23,7 +29,7 @@ def process_client_message(message: dict) -> dict:
     :return: ответ клиенту - словарь по протоколу JIM
     """
     # логируем пришедшее на разбор сообщение клиента (на уровне debug)
-    SRV_LOGGER.debug(f'Обработка сообщения от клиента: {message}')
+    # SRV_LOGGER.debug(f'Обработка сообщения от клиента: {message}')
 
     # валидация словаря на соотв. протоколу JIM
     # должен содержать ключ действия, само действие - "присутствие",
@@ -37,14 +43,14 @@ def process_client_message(message: dict) -> dict:
         # если все соответствует - отвечаем 200 (ок)
         # и логируем это на уровне "инфо"
         response = {RESPONSE: 200}
-        SRV_LOGGER.info(f'Сообщение корректное. Ответ: {response}')
+        # SRV_LOGGER.info(f'Сообщение корректное. Ответ: {response}')
         return response
     # если не все хорошо - отдаем ошибку о несоотв. формате и логируем
     response = {
         RESPONSE: 400,
         ERROR: BAD_REQUEST
     }
-    SRV_LOGGER.error(f'Сообщение не в формате протокола JIM. Ответ: {response}')
+    # SRV_LOGGER.error(f'Сообщение не в формате протокола JIM. Ответ: {response}')
     return response
 
 
@@ -72,23 +78,23 @@ def main() -> None:
     """
 
     # логируем параметры - запуска сервера
-    SRV_LOGGER.debug(f'Запуск сервера с параметрами: {argv[1:]}')
+    # SRV_LOGGER.debug(f'Запуск сервера с параметрами: {argv[1:]}')
 
     # создаём парсер и передаем для разбора параметры (без имени самого файла)
     parser = create_arg_parser()
     try:
         namespace = parser.parse_args(sys.argv[1:])
     except Exception as err:
-        SRV_LOGGER.critical(f'Ошибка обработки параметров запуска сервера: '
-                            f'{err}')
+        # SRV_LOGGER.critical(f'Ошибка обработки параметров запуска сервера: '
+        #                     f'{err}')
         exit(1)
     # сохраняем распарсенные адрес и порт, заданные в параметрах запуска скрипта
     listen_addr = namespace.a
     listen_port = namespace.p
 
     # логируем параметры - адрес и порт запуска сервера
-    SRV_LOGGER.debug(f'- порт сервера: {listen_port}')
-    SRV_LOGGER.debug(f'- адрес сервера: {listen_addr}')
+    # SRV_LOGGER.debug(f'- порт сервера: {listen_port}')
+    # SRV_LOGGER.debug(f'- адрес сервера: {listen_addr}')
 
     # проверяем, чтобы номер порта был релевантным
     try:
@@ -96,9 +102,9 @@ def main() -> None:
             raise ValueError
     except ValueError as err:
         # логируем ошибку "некорректный номер порта"
-        SRV_LOGGER.critical(f'Номер порта может быть только числом в диапазоне '
-                            f'от {LOW_PORT_RANGE} до {HIGH_PORT_RANGE}. '
-                            f'Получено: "{listen_port}".\nОшибка: {err}')
+        # SRV_LOGGER.critical(f'Номер порта может быть только числом в диапазоне '
+        #                     f'от {LOW_PORT_RANGE} до {HIGH_PORT_RANGE}. '
+        #                     f'Получено: "{listen_port}".\nОшибка: {err}')
         exit(2)
 
     # создаем (сетевой, потоковый) сокет, привязываем его и начинаем слушать
@@ -111,28 +117,28 @@ def main() -> None:
         # при поступлении запроса - принимаем объект клиентского сокета и адрес
         client_sock, client_addr_port = JIM_socket.accept()
         client_addr, client_port = client_addr_port
-        SRV_LOGGER.info(f'Установлено соединение с клиентом, '
-                        f'адрес: {client_addr=}, порт: {client_port=}')
+        # SRV_LOGGER.info(f'Установлено соединение с клиентом, '
+        #                 f'адрес: {client_addr=}, порт: {client_port=}')
 
         try:
             message_from_client = get_message(client_sock)
             # полученные из сокета байты - возвращаются в виде словаря
             # print('Полученное сообщение от клиента:')
             # pprint(message_from_client)
-            SRV_LOGGER.info(f'Полученное сообщение от клиента: '
-                            f'{message_from_client}')
+            # SRV_LOGGER.info(f'Полученное сообщение от клиента: '
+            #                 f'{message_from_client}')
             # разбираем полученный словарь на служ. инфо JIM и само сообщение
             response = process_client_message(message_from_client)
             send_message(client_sock, response)
             # print('Клиенту отправлен ответ:')
             # pprint(response)
-            SRV_LOGGER.info(f'Клиенту отправлен ответ: {response}')
+            # SRV_LOGGER.info(f'Клиенту отправлен ответ: {response}')
             client_sock.close()  # после отправки ответа - закрываем кл. сокет
             # print('Соединение с клиентом закрыто!\n')
-            SRV_LOGGER.info('Соединение с клиентом закрыто!')
+            # SRV_LOGGER.info('Соединение с клиентом закрыто!')
         except(ValueError, json.JSONDecodeError) as err:
-            SRV_LOGGER.error(f'Получено некорректное сообщение от клиента '
-                             f'{client_addr_port}, ошибка: {err}')
+            # SRV_LOGGER.error(f'Получено некорректное сообщение от клиента '
+            #                  f'{client_addr_port}, ошибка: {err}')
             client_sock.close()
 
 

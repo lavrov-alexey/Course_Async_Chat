@@ -1,7 +1,29 @@
 """ Общие вспомогательные утилиты для проекта """
 import json
 import socket
+import logging
 import common.variables as prj_vars
+from common.variables import SRV_LOGGER, CLIENT_LOGGER
+
+
+def choice_logger(script_name: str) -> logging.Logger:
+    """
+    Отдает логгер сервера или клиента по имени скрипта на входе.
+    Если не сервер или клиент - генерит исключение ValueError
+    """
+    try:
+        # если в имени скрипта есть 'client' - берем клиентский конфиг логов
+        if script_name.find('client') != -1:
+            LOGGER = logging.getLogger(prj_vars.CLIENT_LOGGER)
+        # если в имени скрипта есть 'server' - берем клиентский конфиг логов
+        elif script_name.find('server') != -1:
+            LOGGER = logging.getLogger(prj_vars.SRV_LOGGER)
+        else:
+            raise ValueError
+    except ValueError as err:
+        print(f'Попытка залогировать работу неизвестного скрипта '
+              f'{script_name}: {err}')
+        exit(1)
 
 
 def detect_encode(file_name: str) -> str:
