@@ -1,0 +1,105 @@
+2023-07-11 22:11:26,113        DEBUG      decorators           
+Вызов функции: create_presense с параметрами: (), {}
+из модуля: __main__, функции: main
+2023-07-11 22:11:26,114        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689102686.1148603, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:11:26,139        DEBUG      decorators           
+Вызов функции: create_presense с параметрами: (), {}
+из модуля: __main__, функции: main
+2023-07-11 22:11:26,141        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689102686.1418662, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:11:26,162        DEBUG      decorators           
+Вызов функции: process_answ с параметрами: ({'RESPONSE': 200},), {}
+из модуля: __main__, функции: main
+2023-07-11 22:11:26,163        DEBUG      decorators           Результат работы функции: 200: OK
+2023-07-11 22:11:26,164        DEBUG      decorators           
+Вызов функции: create_presense с параметрами: (), {}
+из модуля: __main__, функции: main
+2023-07-11 22:11:26,165        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689102686.1658707, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:11:26,168        DEBUG      decorators           
+Вызов функции: process_answ с параметрами: ({'RESPONSE': 200},), {}
+из модуля: __main__, функции: main
+2023-07-11 22:11:26,169        DEBUG      decorators           Результат работы функции: 200: OK
+2023-07-11 22:11:26,175        DEBUG      decorators           
+Вызов функции: process_answ с параметрами: ({'RESPONSE': 200},), {}
+из модуля: __main__, функции: main
+2023-07-11 22:11:26,176        DEBUG      decorators           Результат работы функции: 200: OK
+2023-07-11 22:11:26,188        DEBUG      decorators           
+Вызов функции: create_presense с параметрами: (), {}
+из модуля: __main__, функции: main
+2023-07-11 22:11:26,189        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689102686.1898768, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:11:26,195        DEBUG      decorators           
+Вызов функции: process_answ с параметрами: ({'RESPONSE': 200},), {}
+из модуля: __main__, функции: main
+2023-07-11 22:11:26,196        DEBUG      decorators           Результат работы функции: 200: OK
+2023-07-11 22:11:26,202        DEBUG      decorators           
+Вызов функции: create_presense с параметрами: (), {}
+из модуля: __main__, функции: main
+2023-07-11 22:11:26,203        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689102686.2038805, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:11:26,208        DEBUG      decorators           
+Вызов функции: process_answ с параметрами: ({'RESPONSE': 200},), {}
+из модуля: __main__, функции: main
+2023-07-11 22:11:26,209        DEBUG      decorators           Результат работы функции: 200: OK
+2023-07-11 22:18:37,418        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
+2023-07-11 22:18:37,419        DEBUG      client               Cервер - адрес: localhost, порт: 7777
+2023-07-11 22:18:37,442        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
+2023-07-11 22:18:37,443        DEBUG      client               Cервер - адрес: localhost, порт: 7777
+2023-07-11 22:18:37,454        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
+2023-07-11 22:18:37,456        DEBUG      client               Cервер - адрес: localhost, порт: 7777
+2023-07-11 22:18:37,471        DEBUG      decorators           
+Вызов функции: create_presense с параметрами: (), {}
+из модуля: __main__, функции: main
+2023-07-11 22:18:37,472        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689103117.472082, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:18:37,473        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1689103117.472082, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:18:37,484        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
+2023-07-11 22:18:37,486        DEBUG      client               Cервер - адрес: localhost, порт: 7777
+2023-07-11 22:18:37,493        DEBUG      decorators           
+Вызов функции: create_presense с параметрами: (), {}
+из модуля: __main__, функции: main
+2023-07-11 22:18:37,494        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689103117.4940886, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:18:37,496        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1689103117.4940886, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:18:37,505        DEBUG      decorators           
+Вызов функции: create_presense с параметрами: (), {}
+из модуля: __main__, функции: main
+2023-07-11 22:18:37,506        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689103117.506092, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:18:37,506        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1689103117.506092, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:18:37,511        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
+2023-07-11 22:18:37,512        DEBUG      client               Cервер - адрес: localhost, порт: 7777
+2023-07-11 22:18:37,524        DEBUG      decorators           
+Вызов функции: process_answ с параметрами: ({'RESPONSE': 200},), {}
+из модуля: __main__, функции: main
+2023-07-11 22:18:37,525        DEBUG      client               Ответ сервера успешный: 200: OK
+2023-07-11 22:18:37,526        DEBUG      decorators           Результат работы функции: 200: OK
+2023-07-11 22:18:37,527        INFO       client               От сервера получен ответ: 200: OK
+2023-07-11 22:18:37,531        DEBUG      decorators           
+Вызов функции: process_answ с параметрами: ({'RESPONSE': 200},), {}
+из модуля: __main__, функции: main
+2023-07-11 22:18:37,532        DEBUG      decorators           
+Вызов функции: create_presense с параметрами: (), {}
+из модуля: __main__, функции: main
+2023-07-11 22:18:37,532        DEBUG      client               Ответ сервера успешный: 200: OK
+2023-07-11 22:18:37,533        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689103117.533099, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:18:37,533        DEBUG      decorators           Результат работы функции: 200: OK
+2023-07-11 22:18:37,534        INFO       client               От сервера получен ответ: 200: OK
+2023-07-11 22:18:37,534        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1689103117.533099, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:18:37,540        DEBUG      decorators           
+Вызов функции: process_answ с параметрами: ({'RESPONSE': 200},), {}
+из модуля: __main__, функции: main
+2023-07-11 22:18:37,541        DEBUG      client               Ответ сервера успешный: 200: OK
+2023-07-11 22:18:37,542        DEBUG      decorators           Результат работы функции: 200: OK
+2023-07-11 22:18:37,543        INFO       client               От сервера получен ответ: 200: OK
+2023-07-11 22:18:37,549        DEBUG      decorators           
+Вызов функции: process_answ с параметрами: ({'RESPONSE': 200},), {}
+из модуля: __main__, функции: main
+2023-07-11 22:18:37,550        DEBUG      client               Ответ сервера успешный: 200: OK
+2023-07-11 22:18:37,551        DEBUG      decorators           Результат работы функции: 200: OK
+2023-07-11 22:18:37,552        INFO       client               От сервера получен ответ: 200: OK
+2023-07-11 22:18:37,556        DEBUG      decorators           
+Вызов функции: create_presense с параметрами: (), {}
+из модуля: __main__, функции: main
+2023-07-11 22:18:37,557        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689103117.5571024, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:18:37,558        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1689103117.5571024, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:18:37,562        DEBUG      decorators           
+Вызов функции: process_answ с параметрами: ({'RESPONSE': 200},), {}
+из модуля: __main__, функции: main
+2023-07-11 22:18:37,564        DEBUG      client               Ответ сервера успешный: 200: OK
+2023-07-11 22:18:37,564        DEBUG      decorators           Результат работы функции: 200: OK
+2023-07-11 22:18:37,565        INFO       client               От сервера получен ответ: 200: OK

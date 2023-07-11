@@ -1,0 +1,84 @@
+2023-07-11 22:11:26,033        DEBUG      server               Запуск сервера с параметрами: ['-p', '7777', '-a', 'localhost']
+2023-07-11 22:11:26,051        DEBUG      server               порт сервера: 7777, адрес сервера: localhost
+2023-07-11 22:11:26,071        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=7686
+2023-07-11 22:11:26,115        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689102686.1148603, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:11:26,157        DEBUG      decorators           
+Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689102686.1148603, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
+из модуля: __main__, функции: main
+2023-07-11 22:11:26,160        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-11 22:11:26,161        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
+2023-07-11 22:11:26,162        INFO       server               Соединение с клиентом закрыто!
+2023-07-11 22:11:26,163        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=7687
+2023-07-11 22:11:26,164        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689102686.1418662, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:11:26,166        DEBUG      decorators           
+Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689102686.1418662, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
+из модуля: __main__, функции: main
+2023-07-11 22:11:26,166        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-11 22:11:26,167        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
+2023-07-11 22:11:26,168        INFO       server               Соединение с клиентом закрыто!
+2023-07-11 22:11:26,169        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=7688
+2023-07-11 22:11:26,170        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689102686.1658707, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:11:26,172        DEBUG      decorators           
+Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689102686.1658707, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
+из модуля: __main__, функции: main
+2023-07-11 22:11:26,173        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-11 22:11:26,174        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
+2023-07-11 22:11:26,175        INFO       server               Соединение с клиентом закрыто!
+2023-07-11 22:11:26,176        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=7689
+2023-07-11 22:11:26,190        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689102686.1898768, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:11:26,192        DEBUG      decorators           
+Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689102686.1898768, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
+из модуля: __main__, функции: main
+2023-07-11 22:11:26,193        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-11 22:11:26,194        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
+2023-07-11 22:11:26,194        INFO       server               Соединение с клиентом закрыто!
+2023-07-11 22:11:26,195        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=7690
+2023-07-11 22:11:26,204        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689102686.2038805, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:11:26,205        DEBUG      decorators           
+Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689102686.2038805, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
+из модуля: __main__, функции: main
+2023-07-11 22:11:26,206        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-11 22:11:26,207        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
+2023-07-11 22:11:26,208        INFO       server               Соединение с клиентом закрыто!
+2023-07-11 22:18:37,340        DEBUG      server               Запуск сервера с параметрами: ['-p', '7777', '-a', 'localhost']
+2023-07-11 22:18:37,363        DEBUG      server               порт сервера: 7777, адрес сервера: localhost
+2023-07-11 22:18:37,425        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=7765
+2023-07-11 22:18:37,473        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689103117.472082, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:18:37,521        DEBUG      decorators           
+Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689103117.472082, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
+из модуля: __main__, функции: main
+2023-07-11 22:18:37,522        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-11 22:18:37,523        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
+2023-07-11 22:18:37,524        INFO       server               Соединение с клиентом закрыто!
+2023-07-11 22:18:37,524        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=7766
+2023-07-11 22:18:37,525        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689103117.4940886, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:18:37,527        DEBUG      decorators           
+Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689103117.4940886, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
+из модуля: __main__, функции: main
+2023-07-11 22:18:37,528        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-11 22:18:37,529        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
+2023-07-11 22:18:37,530        INFO       server               Соединение с клиентом закрыто!
+2023-07-11 22:18:37,531        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=7767
+2023-07-11 22:18:37,533        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689103117.506092, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:18:37,536        DEBUG      decorators           
+Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689103117.506092, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
+из модуля: __main__, функции: main
+2023-07-11 22:18:37,537        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-11 22:18:37,539        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
+2023-07-11 22:18:37,539        INFO       server               Соединение с клиентом закрыто!
+2023-07-11 22:18:37,540        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=7768
+2023-07-11 22:18:37,542        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689103117.533099, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:18:37,546        DEBUG      decorators           
+Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689103117.533099, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
+из модуля: __main__, функции: main
+2023-07-11 22:18:37,547        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-11 22:18:37,547        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
+2023-07-11 22:18:37,548        INFO       server               Соединение с клиентом закрыто!
+2023-07-11 22:18:37,549        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=7769
+2023-07-11 22:18:37,558        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689103117.5571024, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-11 22:18:37,559        DEBUG      decorators           
+Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689103117.5571024, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
+из модуля: __main__, функции: main
+2023-07-11 22:18:37,560        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-11 22:18:37,561        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
+2023-07-11 22:18:37,562        INFO       server               Соединение с клиентом закрыто!

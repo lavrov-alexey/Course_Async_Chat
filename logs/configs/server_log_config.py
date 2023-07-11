@@ -47,8 +47,8 @@ STREAM_HANDLER.setLevel(LOG_LVL_CONSOLE)
 # LOG_FILE = logging.FileHandler(log_file_name, encoding=ENCODING)
 LOG_FILE = logging.handlers.TimedRotatingFileHandler(log_file_name,
                                                      encoding=ENCODING,
-                                                     interval=10,
-                                                     when='m',
+                                                     interval=1,
+                                                     when='D',
                                                      utc=366)
 LOG_FILE.setLevel(LOG_LVL_FILE)
 
