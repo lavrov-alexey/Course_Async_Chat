@@ -53,4 +53,28 @@ def logging_deco(func_for_logging):
     return deco
 
 
+class LogForFunc:
+    """
+    Класс-декоратор для логирования функций (параметры, результаты)
+    """
+    def __init__(self):
+        # сюда можно будет принимать параметры для декоратора
+        pass
 
+    def __call__(self, func_for_logging):
+        """
+        Сюда принимаем объект функции для логирования
+        """
+        def deco(*args, **kwargs):
+            """
+            Сюда принимаем параметры функции для логирования и её рез-тов работы
+            """
+            LOGGER.debug(f'\nВызов функции: {func_for_logging.__name__} '
+                         f'с параметрами: {args}, {kwargs}\n'
+                         f'из модуля: {func_for_logging.__module__}, '
+                         f'функции: {inspect.stack()[1][3]}')
+
+            res = func_for_logging(*args, **kwargs)
+            LOGGER.debug(f'Результат работы функции: {res}')
+            return res
+        return deco

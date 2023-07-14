@@ -9,16 +9,16 @@ from common.variables import ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, GUEST,\
     DEFAULT_PORT, MAX_CONNECTIONS, RESPONSE, ERROR, BAD_REQUEST, \
     LOW_PORT_RANGE, HIGH_PORT_RANGE, SRV_LOGGER, SRV_PORT_KEY, SRV_ADDR_KEY
 from common.utils import get_message, send_message
-from common.decorators import logging_deco
 # подтягиваем готовый конфиг логгера
 import logs.configs.server_log_config
-from common.decorators import logging_deco
+from common.decorators import logging_deco, LogForFunc
 
 # запуск логирования сервера (получаем серв. логгер из файла конфига)
 LOGGER = logging.getLogger(SRV_LOGGER)
 
 
-@logging_deco
+# @logging_deco
+@LogForFunc()
 def process_client_message(message: dict) -> dict:
     """
     Обрабатывает сообщения от клиентов, принимает словарь по протоколу JIM,

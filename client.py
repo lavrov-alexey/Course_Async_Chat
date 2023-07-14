@@ -14,12 +14,13 @@ from common.variables import RESPONSE, ERROR, LOW_PORT_RANGE, HIGH_PORT_RANGE, \
 # подтягиваем готовый конфиг логгера
 import logs.configs.client_log_config
 # подтягиваем декоратор для логирования работы функций
-from common.decorators import logging_deco
+from common.decorators import logging_deco, LogForFunc
 # запуск логирования клиента (получаем клиент. логгер из файла конфига)
 LOGGER = logging.getLogger(CLIENT_LOGGER)
 
 
-@logging_deco
+# @logging_deco
+@LogForFunc()
 def create_presense(account_name=GUEST) -> dict:
     """
     Формирует словарь-сообщение присутствия в формате протокола JIM
@@ -36,7 +37,8 @@ def create_presense(account_name=GUEST) -> dict:
     return presence_msg
 
 
-@logging_deco
+# @logging_deco
+@LogForFunc()
 def process_answ(message: dict) -> str:
     """
     Разбирает ответное сообщение сервера по протоколу JIM
