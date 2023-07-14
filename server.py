@@ -5,7 +5,7 @@ import sys
 from pprint import pprint
 from socket import socket, AF_INET, SOCK_STREAM
 from sys import argv
-from common.variables import ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, GUEST, \
+from common.variables import ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, GUEST,\
     DEFAULT_PORT, MAX_CONNECTIONS, RESPONSE, ERROR, BAD_REQUEST, \
     LOW_PORT_RANGE, HIGH_PORT_RANGE, SRV_LOGGER, SRV_PORT_KEY, SRV_ADDR_KEY
 from common.utils import get_message, send_message
@@ -18,7 +18,7 @@ from common.decorators import logging_deco
 LOGGER = logging.getLogger(SRV_LOGGER)
 
 
-@logging_deco(LOGGER)
+@logging_deco
 def process_client_message(message: dict) -> dict:
     """
     Обрабатывает сообщения от клиентов, принимает словарь по протоколу JIM,

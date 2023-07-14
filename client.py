@@ -19,7 +19,7 @@ from common.decorators import logging_deco
 LOGGER = logging.getLogger(CLIENT_LOGGER)
 
 
-@logging_deco(LOGGER)
+@logging_deco
 def create_presense(account_name=GUEST) -> dict:
     """
     Формирует словарь-сообщение присутствия в формате протокола JIM
@@ -36,7 +36,7 @@ def create_presense(account_name=GUEST) -> dict:
     return presence_msg
 
 
-@logging_deco(LOGGER)
+@logging_deco
 def process_answ(message: dict) -> str:
     """
     Разбирает ответное сообщение сервера по протоколу JIM
