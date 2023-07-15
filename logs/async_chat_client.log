@@ -1,70 +1,210 @@
-2023-07-08 10:14:39,643        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
-2023-07-08 10:14:39,644        DEBUG      client               Cервер - адрес: localhost, порт: 7777
-2023-07-08 10:14:39,649        INFO       client               Создано сообщение присутствия: {'ACTION': 'PRESENCE', 'TIME': 1688800479.6495664, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-08 10:14:39,650        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1688800479.6495664, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-08 10:14:39,655        DEBUG      client               Для обработки получено сообщение: {'RESPONSE': 200}
-2023-07-08 10:14:39,656        DEBUG      client               Ответ сервера успешный: 200: OK
-2023-07-08 10:14:39,657        INFO       client               От сервера получен ответ: 200: OK
-2023-07-08 10:14:39,659        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
-2023-07-08 10:14:39,659        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
-2023-07-08 10:14:39,660        DEBUG      client               Cервер - адрес: localhost, порт: 7777
-2023-07-08 10:14:39,660        DEBUG      client               Cервер - адрес: localhost, порт: 7777
-2023-07-08 10:14:39,665        INFO       client               Создано сообщение присутствия: {'ACTION': 'PRESENCE', 'TIME': 1688800479.6655693, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-08 10:14:39,665        INFO       client               Создано сообщение присутствия: {'ACTION': 'PRESENCE', 'TIME': 1688800479.6655693, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-08 10:14:39,667        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1688800479.6655693, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-08 10:14:39,667        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1688800479.6655693, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-08 10:14:39,670        DEBUG      client               Для обработки получено сообщение: {'RESPONSE': 200}
-2023-07-08 10:14:39,670        DEBUG      client               Ответ сервера успешный: 200: OK
-2023-07-08 10:14:39,671        INFO       client               От сервера получен ответ: 200: OK
-2023-07-08 10:14:39,674        DEBUG      client               Для обработки получено сообщение: {'RESPONSE': 200}
-2023-07-08 10:14:39,675        DEBUG      client               Ответ сервера успешный: 200: OK
-2023-07-08 10:14:39,676        INFO       client               От сервера получен ответ: 200: OK
-2023-07-08 10:14:39,688        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
-2023-07-08 10:14:39,689        DEBUG      client               Cервер - адрес: localhost, порт: 7777
-2023-07-08 10:14:39,694        INFO       client               Создано сообщение присутствия: {'ACTION': 'PRESENCE', 'TIME': 1688800479.6945758, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-08 10:14:39,695        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1688800479.6945758, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-08 10:14:39,698        DEBUG      client               Для обработки получено сообщение: {'RESPONSE': 200}
-2023-07-08 10:14:39,699        DEBUG      client               Ответ сервера успешный: 200: OK
-2023-07-08 10:14:39,700        INFO       client               От сервера получен ответ: 200: OK
-2023-07-08 10:14:39,704        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
-2023-07-08 10:14:39,705        DEBUG      client               Cервер - адрес: localhost, порт: 7777
-2023-07-08 10:14:39,710        INFO       client               Создано сообщение присутствия: {'ACTION': 'PRESENCE', 'TIME': 1688800479.7105794, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-08 10:14:39,711        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1688800479.7105794, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-08 10:14:39,713        DEBUG      client               Для обработки получено сообщение: {'RESPONSE': 200}
-2023-07-08 10:14:39,714        DEBUG      client               Ответ сервера успешный: 200: OK
-2023-07-08 10:14:39,715        INFO       client               От сервера получен ответ: 200: OK
-2023-07-08 19:20:17,261        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
-2023-07-08 19:20:17,263        DEBUG      client               Cервер - адрес: localhost, порт: 7777
-2023-07-08 19:20:17,304        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
-2023-07-08 19:20:17,306        DEBUG      client               Cервер - адрес: localhost, порт: 7777
-2023-07-08 19:20:17,310        INFO       client               Создано сообщение присутствия: {'ACTION': 'PRESENCE', 'TIME': 1688833217.3104873, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-08 19:20:17,312        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1688833217.3104873, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-08 19:20:17,315        DEBUG      client               Для обработки получено сообщение: {'RESPONSE': 200}
-2023-07-08 19:20:17,316        DEBUG      client               Ответ сервера успешный: 200: OK
-2023-07-08 19:20:17,317        INFO       client               От сервера получен ответ: 200: OK
-2023-07-08 19:20:17,335        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
-2023-07-08 19:20:17,336        DEBUG      client               Cервер - адрес: localhost, порт: 7777
-2023-07-08 19:20:17,342        INFO       client               Создано сообщение присутствия: {'ACTION': 'PRESENCE', 'TIME': 1688833217.3424935, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-08 19:20:17,343        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1688833217.3424935, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-08 19:20:17,346        DEBUG      client               Для обработки получено сообщение: {'RESPONSE': 200}
-2023-07-08 19:20:17,347        DEBUG      client               Ответ сервера успешный: 200: OK
-2023-07-08 19:20:17,348        INFO       client               От сервера получен ответ: 200: OK
-2023-07-08 19:20:17,349        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
-2023-07-08 19:20:17,350        DEBUG      client               Cервер - адрес: localhost, порт: 7777
-2023-07-08 19:20:17,354        INFO       client               Создано сообщение присутствия: {'ACTION': 'PRESENCE', 'TIME': 1688833217.3544972, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-08 19:20:17,355        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
-2023-07-08 19:20:17,355        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1688833217.3544972, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-08 19:20:17,356        DEBUG      client               Cервер - адрес: localhost, порт: 7777
-2023-07-08 19:20:17,358        DEBUG      client               Для обработки получено сообщение: {'RESPONSE': 200}
-2023-07-08 19:20:17,359        DEBUG      client               Ответ сервера успешный: 200: OK
-2023-07-08 19:20:17,360        INFO       client               От сервера получен ответ: 200: OK
-2023-07-08 19:20:17,361        INFO       client               Создано сообщение присутствия: {'ACTION': 'PRESENCE', 'TIME': 1688833217.3614972, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-08 19:20:17,362        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1688833217.3614972, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-08 19:20:17,367        DEBUG      client               Для обработки получено сообщение: {'RESPONSE': 200}
-2023-07-08 19:20:17,368        DEBUG      client               Ответ сервера успешный: 200: OK
-2023-07-08 19:20:17,369        INFO       client               От сервера получен ответ: 200: OK
-2023-07-08 19:20:17,774        INFO       client               Создано сообщение присутствия: {'ACTION': 'PRESENCE', 'TIME': 1688833217.774594, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-08 19:20:17,776        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1688833217.774594, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-08 19:20:17,783        DEBUG      client               Для обработки получено сообщение: {'RESPONSE': 200}
-2023-07-08 19:20:17,785        DEBUG      client               Ответ сервера успешный: 200: OK
-2023-07-08 19:20:17,787        INFO       client               От сервера получен ответ: 200: OK
+2023-07-14 22:46:06,188        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
+2023-07-14 22:46:06,189        DEBUG      client               Cервер - адрес: localhost, порт: 7777
+2023-07-14 22:46:06,199        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
+2023-07-14 22:46:06,201        DEBUG      client               Cервер - адрес: localhost, порт: 7777
+2023-07-14 22:46:06,216        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
+2023-07-14 22:46:06,217        DEBUG      client               Cервер - адрес: localhost, порт: 7777
+2023-07-14 22:46:06,234        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
+2023-07-14 22:46:06,235        DEBUG      client               Cервер - адрес: localhost, порт: 7777
+2023-07-14 22:46:06,235        DEBUG      decorators           
+Вызов функции: create_presense с параметрами: (), {}
+из модуля: __main__, функции: main
+2023-07-14 22:46:06,236        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689363966.236688, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-14 22:46:06,238        DEBUG      decorators           
+Вызов функции: send_message с параметрами: (<socket.socket fd=568, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2413), raddr=('127.0.0.1', 7777)>, {'ACTION': 'PRESENCE', 'TIME': 1689363966.236688, 'USER': {'ACCOUNT_NAME': 'GUEST'}}), {}
+из модуля: common.utils, функции: main
+2023-07-14 22:46:06,240        DEBUG      decorators           Результат работы функции: None
+2023-07-14 22:46:06,240        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1689363966.236688, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-14 22:46:06,241        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
+2023-07-14 22:46:06,242        DEBUG      client               Cервер - адрес: localhost, порт: 7777
+2023-07-14 22:46:06,242        DEBUG      decorators           
+Вызов функции: get_message с параметрами: (<socket.socket fd=568, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2413), raddr=('127.0.0.1', 7777)>,), {}
+из модуля: common.utils, функции: main
+2023-07-14 22:46:06,247        DEBUG      decorators           
+Вызов функции: create_presense с параметрами: (), {}
+из модуля: __main__, функции: main
+2023-07-14 22:46:06,248        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689363966.247691, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-14 22:46:06,249        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-14 22:46:06,249        DEBUG      decorators           
+Вызов функции: send_message с параметрами: (<socket.socket fd=420, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2414), raddr=('127.0.0.1', 7777)>, {'ACTION': 'PRESENCE', 'TIME': 1689363966.247691, 'USER': {'ACCOUNT_NAME': 'GUEST'}}), {}
+из модуля: common.utils, функции: main
+2023-07-14 22:46:06,251        DEBUG      decorators           
+Вызов функции: process_answ с параметрами: ({'RESPONSE': 200},), {}
+из модуля: __main__, функции: main
+2023-07-14 22:46:06,251        DEBUG      decorators           Результат работы функции: None
+2023-07-14 22:46:06,252        DEBUG      client               Ответ сервера успешный: 200: OK
+2023-07-14 22:46:06,252        DEBUG      decorators           Результат работы функции: 200: OK
+2023-07-14 22:46:06,252        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1689363966.247691, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-14 22:46:06,253        INFO       client               От сервера получен ответ: 200: OK
+2023-07-14 22:46:06,254        DEBUG      decorators           
+Вызов функции: get_message с параметрами: (<socket.socket fd=420, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2414), raddr=('127.0.0.1', 7777)>,), {}
+из модуля: common.utils, функции: main
+2023-07-14 22:46:06,262        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-14 22:46:06,263        DEBUG      decorators           
+Вызов функции: create_presense с параметрами: (), {}
+из модуля: __main__, функции: main
+2023-07-14 22:46:06,264        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689363966.2646942, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-14 22:46:06,264        DEBUG      decorators           
+Вызов функции: process_answ с параметрами: ({'RESPONSE': 200},), {}
+из модуля: __main__, функции: main
+2023-07-14 22:46:06,265        DEBUG      client               Ответ сервера успешный: 200: OK
+2023-07-14 22:46:06,266        DEBUG      decorators           Результат работы функции: 200: OK
+2023-07-14 22:46:06,266        DEBUG      decorators           
+Вызов функции: send_message с параметрами: (<socket.socket fd=344, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2415), raddr=('127.0.0.1', 7777)>, {'ACTION': 'PRESENCE', 'TIME': 1689363966.2646942, 'USER': {'ACCOUNT_NAME': 'GUEST'}}), {}
+из модуля: common.utils, функции: main
+2023-07-14 22:46:06,267        INFO       client               От сервера получен ответ: 200: OK
+2023-07-14 22:46:06,267        DEBUG      decorators           Результат работы функции: None
+2023-07-14 22:46:06,268        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1689363966.2646942, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-14 22:46:06,270        DEBUG      decorators           
+Вызов функции: get_message с параметрами: (<socket.socket fd=344, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2415), raddr=('127.0.0.1', 7777)>,), {}
+из модуля: common.utils, функции: main
+2023-07-14 22:46:06,277        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-14 22:46:06,279        DEBUG      decorators           
+Вызов функции: create_presense с параметрами: (), {}
+из модуля: __main__, функции: main
+2023-07-14 22:46:06,280        DEBUG      decorators           
+Вызов функции: process_answ с параметрами: ({'RESPONSE': 200},), {}
+из модуля: __main__, функции: main
+2023-07-14 22:46:06,280        DEBUG      client               Ответ сервера успешный: 200: OK
+ION': 'PRESENCE', 'TIME': 1689363966.2806976, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-14 22:46:06,282        DEBUG      decorators           Результат работы функции: 200: OK
+2023-07-14 22:46:06,282        INFO       client               От сервера получен ответ: 200: OK
+2023-07-14 22:46:06,283        DEBUG      decorators           
+Вызов функции: send_message с параметрами: (<socket.socket fd=340, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2416), raddr=('127.0.0.1', 7777)>, {'ACTION': 'PRESENCE', 'TIME': 1689363966.2806976, 'USER': {'ACCOUNT_NAME': 'GUEST'}}), {}
+из модуля: common.utils, функции: main
+2023-07-14 22:46:06,284        DEBUG      decorators           Результат работы функции: None
+2023-07-14 22:46:06,285        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1689363966.2806976, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-14 22:46:06,286        DEBUG      decorators           
+Вызов функции: create_presense с параметрами: (), {}
+из модуля: __main__, функции: main
+2023-07-14 22:46:06,287        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689363966.2876995, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-14 22:46:06,287        DEBUG      decorators           
+Вызов функции: get_message с параметрами: (<socket.socket fd=340, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2416), raddr=('127.0.0.1', 7777)>,), {}
+из модуля: common.utils, функции: main
+2023-07-14 22:46:06,289        DEBUG      decorators           
+Вызов функции: send_message с параметрами: (<socket.socket fd=476, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2417), raddr=('127.0.0.1', 7777)>, {'ACTION': 'PRESENCE', 'TIME': 1689363966.2876995, 'USER': {'ACCOUNT_NAME': 'GUEST'}}), {}
+из модуля: common.utils, функции: main
+2023-07-14 22:46:06,290        DEBUG      decorators           Результат работы функции: None
+2023-07-14 22:46:06,291        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1689363966.2876995, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-14 22:46:06,293        DEBUG      decorators           
+Вызов функции: get_message с параметрами: (<socket.socket fd=476, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2417), raddr=('127.0.0.1', 7777)>,), {}
+из модуля: common.utils, функции: main
+2023-07-14 22:46:06,294        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-14 22:46:06,296        DEBUG      decorators           
+Вызов функции: process_answ с параметрами: ({'RESPONSE': 200},), {}
+из модуля: __main__, функции: main
+2023-07-14 22:46:06,297        DEBUG      client               Ответ сервера успешный: 200: OK
+2023-07-14 22:46:06,298        DEBUG      decorators           Результат работы функции: 200: OK
+2023-07-14 22:46:06,299        INFO       client               От сервера получен ответ: 200: OK
+2023-07-14 22:46:06,307        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-14 22:46:06,308        DEBUG      decorators           
+Вызов функции: process_answ с параметрами: ({'RESPONSE': 200},), {}
+из модуля: __main__, функции: main
+2023-07-14 22:46:06,309        DEBUG      client               Ответ сервера успешный: 200: OK
+2023-07-14 22:46:06,310        DEBUG      decorators           Результат работы функции: 200: OK
+2023-07-14 22:46:06,310        INFO       client               От сервера получен ответ: 200: OK
+2023-07-14 22:47:17,968        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
+2023-07-14 22:47:17,969        DEBUG      client               Cервер - адрес: localhost, порт: 7777
+2023-07-14 22:47:17,981        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
+2023-07-14 22:47:17,982        DEBUG      client               Cервер - адрес: localhost, порт: 7777
+2023-07-14 22:47:18,008        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
+2023-07-14 22:47:18,009        DEBUG      client               Cервер - адрес: localhost, порт: 7777
+2023-07-14 22:47:18,016        DEBUG      decorators           
+Вызов функции: create_presense с параметрами: (), {}
+из модуля: __main__, функции: main
+2023-07-14 22:47:18,017        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689364038.0179944, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-14 22:47:18,020        DEBUG      decorators           
+Вызов функции: send_message с параметрами: (<socket.socket fd=312, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2421), raddr=('127.0.0.1', 7777)>, {'ACTION': 'PRESENCE', 'TIME': 1689364038.0179944, 'USER': {'ACCOUNT_NAME': 'GUEST'}}), {}
+из модуля: common.utils, функции: main
+2023-07-14 22:47:18,021        DEBUG      decorators           Результат работы функции: None
+2023-07-14 22:47:18,021        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1689364038.0179944, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-14 22:47:18,024        DEBUG      decorators           
+Вызов функции: get_message с параметрами: (<socket.socket fd=312, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2421), raddr=('127.0.0.1', 7777)>,), {}
+из модуля: common.utils, функции: main
+2023-07-14 22:47:18,025        DEBUG      decorators           
+Вызов функции: create_presense с параметрами: (), {}
+из модуля: __main__, функции: main
+2023-07-14 22:47:18,027        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689364038.0279973, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-14 22:47:18,028        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-14 22:47:18,028        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
+2023-07-14 22:47:18,029        DEBUG      client               Cервер - адрес: localhost, порт: 7777
+2023-07-14 22:47:18,029        DEBUG      decorators           
+Вызов функции: send_message с параметрами: (<socket.socket fd=408, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2422), raddr=('127.0.0.1', 7777)>, {'ACTION': 'PRESENCE', 'TIME': 1689364038.0279973, 'USER': {'ACCOUNT_NAME': 'GUEST'}}), {}
+из модуля: common.utils, функции: main
+2023-07-14 22:47:18,030        DEBUG      decorators           Результат работы функции: None
+2023-07-14 22:47:18,030        DEBUG      decorators           
+Вызов функции: process_answ с параметрами: ({'RESPONSE': 200},), {}
+из модуля: __main__, функции: main
+2023-07-14 22:47:18,031        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1689364038.0279973, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-14 22:47:18,031        DEBUG      client               Ответ сервера успешный: 200: OK
+2023-07-14 22:47:18,032        DEBUG      decorators           Результат работы функции: 200: OK
+2023-07-14 22:47:18,033        INFO       client               От сервера получен ответ: 200: OK
+2023-07-14 22:47:18,033        DEBUG      decorators           
+Вызов функции: get_message с параметрами: (<socket.socket fd=408, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2422), raddr=('127.0.0.1', 7777)>,), {}
+из модуля: common.utils, функции: main
+2023-07-14 22:47:18,035        DEBUG      client               Параметры вызова: argv[1:]=['localhost', '7777']
+2023-07-14 22:47:18,036        DEBUG      client               Cервер - адрес: localhost, порт: 7777
+2023-07-14 22:47:18,044        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-14 22:47:18,046        DEBUG      decorators           
+Вызов функции: process_answ с параметрами: ({'RESPONSE': 200},), {}
+из модуля: __main__, функции: main
+2023-07-14 22:47:18,047        DEBUG      client               Ответ сервера успешный: 200: OK
+2023-07-14 22:47:18,048        DEBUG      decorators           Результат работы функции: 200: OK
+2023-07-14 22:47:18,049        INFO       client               От сервера получен ответ: 200: OK
+2023-07-14 22:47:18,055        DEBUG      decorators           
+Вызов функции: create_presense с параметрами: (), {}
+из модуля: __main__, функции: main
+2023-07-14 22:47:18,056        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689364038.0560029, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-14 22:47:18,057        DEBUG      decorators           
+Вызов функции: send_message с параметрами: (<socket.socket fd=464, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2423), raddr=('127.0.0.1', 7777)>, {'ACTION': 'PRESENCE', 'TIME': 1689364038.0560029, 'USER': {'ACCOUNT_NAME': 'GUEST'}}), {}
+из модуля: common.utils, функции: main
+2023-07-14 22:47:18,059        DEBUG      decorators           Результат работы функции: None
+2023-07-14 22:47:18,059        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1689364038.0560029, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-14 22:47:18,061        DEBUG      decorators           
+Вызов функции: get_message с параметрами: (<socket.socket fd=464, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2423), raddr=('127.0.0.1', 7777)>,), {}
+из модуля: common.utils, функции: main
+2023-07-14 22:47:18,068        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-14 22:47:18,073        DEBUG      decorators           
+Вызов функции: process_answ с параметрами: ({'RESPONSE': 200},), {}
+из модуля: __main__, функции: main
+2023-07-14 22:47:18,073        DEBUG      decorators           
+Вызов функции: create_presense с параметрами: (), {}
+из модуля: __main__, функции: main
+2023-07-14 22:47:18,074        DEBUG      client               Ответ сервера успешный: 200: OK
+2023-07-14 22:47:18,074        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689364038.0740085, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-14 22:47:18,075        DEBUG      decorators           Результат работы функции: 200: OK
+2023-07-14 22:47:18,076        INFO       client               От сервера получен ответ: 200: OK
+2023-07-14 22:47:18,076        DEBUG      decorators           
+Вызов функции: send_message с параметрами: (<socket.socket fd=448, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2424), raddr=('127.0.0.1', 7777)>, {'ACTION': 'PRESENCE', 'TIME': 1689364038.0740085, 'USER': {'ACCOUNT_NAME': 'GUEST'}}), {}
+из модуля: common.utils, функции: main
+2023-07-14 22:47:18,078        DEBUG      decorators           Результат работы функции: None
+2023-07-14 22:47:18,078        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1689364038.0740085, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-14 22:47:18,081        DEBUG      decorators           
+Вызов функции: create_presense с параметрами: (), {}
+из модуля: __main__, функции: main
+2023-07-14 22:47:18,081        DEBUG      decorators           
+Вызов функции: get_message с параметрами: (<socket.socket fd=448, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2424), raddr=('127.0.0.1', 7777)>,), {}
+из модуля: common.utils, функции: main
+2023-07-14 22:47:18,082        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689364038.0820093, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-14 22:47:18,084        DEBUG      decorators           
+Вызов функции: send_message с параметрами: (<socket.socket fd=428, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2425), raddr=('127.0.0.1', 7777)>, {'ACTION': 'PRESENCE', 'TIME': 1689364038.0820093, 'USER': {'ACCOUNT_NAME': 'GUEST'}}), {}
+из модуля: common.utils, функции: main
+2023-07-14 22:47:18,085        DEBUG      decorators           Результат работы функции: None
+2023-07-14 22:47:18,085        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-14 22:47:18,086        DEBUG      client               На сервер адрес: localhost, порт: 7777 направлено сообщение: {'ACTION': 'PRESENCE', 'TIME': 1689364038.0820093, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-14 22:47:18,087        DEBUG      decorators           
+Вызов функции: process_answ с параметрами: ({'RESPONSE': 200},), {}
+из модуля: __main__, функции: main
+2023-07-14 22:47:18,088        DEBUG      client               Ответ сервера успешный: 200: OK
+2023-07-14 22:47:18,088        DEBUG      decorators           
+Вызов функции: get_message с параметрами: (<socket.socket fd=428, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2425), raddr=('127.0.0.1', 7777)>,), {}
+из модуля: common.utils, функции: main
+2023-07-14 22:47:18,089        DEBUG      decorators           Результат работы функции: 200: OK
+2023-07-14 22:47:18,090        INFO       client               От сервера получен ответ: 200: OK
+2023-07-14 22:47:18,099        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-14 22:47:18,100        DEBUG      decorators           
+Вызов функции: process_answ с параметрами: ({'RESPONSE': 200},), {}
+из модуля: __main__, функции: main
+2023-07-14 22:47:18,102        DEBUG      client               Ответ сервера успешный: 200: OK
+2023-07-14 22:47:18,103        DEBUG      decorators           Результат работы функции: 200: OK
+2023-07-14 22:47:18,104        INFO       client               От сервера получен ответ: 200: OK

@@ -2,8 +2,11 @@
 import json
 import socket
 import common.variables as prj_vars
+from common.decorators import logging_deco, LogForFunc
 
 
+# @logging_deco
+@LogForFunc()
 def detect_encode(file_name: str) -> str:
     """
     Возвращает автоматически определенную кодировку переданного на вход файла с
@@ -37,6 +40,8 @@ def detect_encode(file_name: str) -> str:
         exit(2)
 
 
+# @logging_deco
+@LogForFunc()
 def get_message(sock: socket) -> dict:
     """
     Принимает через объект сокета байты и декодирует сообщение в словарь,
@@ -58,6 +63,8 @@ def get_message(sock: socket) -> dict:
     raise ValueError
 
 
+# @logging_deco
+@LogForFunc()
 def send_message(sock: socket, message: dict) -> None:
     """
     Принимает сообщение (в протоколе JIM), кодирует его и отправляет в сокет

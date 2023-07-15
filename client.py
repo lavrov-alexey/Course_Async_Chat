@@ -1,4 +1,5 @@
 """ Скрипт клиентской программы асинхронного чата """
+import sys
 from pprint import pprint
 from sys import argv
 import json
@@ -10,12 +11,16 @@ from common.utils import get_message, send_message
 from common.variables import RESPONSE, ERROR, LOW_PORT_RANGE, HIGH_PORT_RANGE, \
     DEFAULT_PORT, DEFAULT_IP_ADDRESS, GUEST, ACTION, PRESENCE, TIME, USER, \
     ACCOUNT_NAME, CLIENT_LOGGER
+# подтягиваем готовый конфиг логгера
 import logs.configs.client_log_config
-
-
+# подтягиваем декоратор для логирования работы функций
+from common.decorators import logging_deco, LogForFunc
 # запуск логирования клиента (получаем клиент. логгер из файла конфига)
 LOGGER = logging.getLogger(CLIENT_LOGGER)
 
+
+# @logging_deco
+@LogForFunc()
 def create_presense(account_name=GUEST) -> dict:
     """
     Формирует словарь-сообщение присутствия в формате протокола JIM
@@ -29,17 +34,17 @@ def create_presense(account_name=GUEST) -> dict:
             ACCOUNT_NAME: account_name
         }
     }
-    LOGGER.info(f'Создано сообщение присутствия: {presence_msg}')
     return presence_msg
 
 
+# @logging_deco
+@LogForFunc()
 def process_answ(message: dict) -> str:
     """
     Разбирает ответное сообщение сервера по протоколу JIM
     :param message:  Словарь с параметрами и текстом сообщения от сервера
     :return: Строка с кодом ответа и его текстом
     """
-    LOGGER.debug(f'Для обработки получено сообщение: {message}')
     # проверяем - есть ли в сообщении есть ключ ответа
     if RESPONSE in message:
         # и если ответ 200 - всё хорошо
@@ -93,9 +98,6 @@ def main() -> None:
     # формируем и отправляем на сервер сообщение о присутствии в формате JIM
     message_to_serv = create_presense()
     send_message(JIM_socket, message_to_serv)
-    # print(f'На сервер адрес: {serv_addr}, порт: {serv_port}\n'
-    #       f'Направлено сообщение:')
-    # pprint(message_to_serv)
     LOGGER.debug(f'На сервер адрес: {serv_addr}, порт: {serv_port} '
                  f'направлено сообщение: {message_to_serv}')
     try:
@@ -104,6 +106,7 @@ def main() -> None:
         LOGGER.info(f'От сервера получен ответ: {answer}')
     except (ValueError, json.JSONDecodeError) as err:
         LOGGER.error(f'Не удалось декодировать сообщение от сервера: {err}')
+        pass
     input('Нажмите Enter для завершения...')
 
 
