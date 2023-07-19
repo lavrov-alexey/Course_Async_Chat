@@ -1,246 +1,84 @@
-2023-07-14 22:46:06,170        DEBUG      server               Запуск сервера с параметрами: ['-p', '7777', '-a', 'localhost']
-2023-07-14 22:46:06,185        DEBUG      server               порт сервера: 7777, адрес сервера: localhost
-2023-07-14 22:46:06,194        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=2413
-2023-07-14 22:46:06,240        DEBUG      decorators           
-Вызов функции: get_message с параметрами: (<socket.socket fd=516, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 2413)>,), {}
+2023-07-19 22:53:00,419        DEBUG      server               Запуск сервера с параметрами: ['-p', '7777', '-a', '127.0.0.1']
+2023-07-19 22:53:00,432        DEBUG      server               порт сервера: 7777, адрес сервера: 127.0.0.1
+2023-07-19 23:02:00,811        DEBUG      server               Запуск сервера с параметрами: ['-p', '7777', '-a', '127.0.0.1']
+2023-07-19 23:02:00,823        DEBUG      server               порт сервера: 7777, адрес сервера: 127.0.0.1
+2023-07-19 23:02:06,399        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=11749
+2023-07-19 23:02:06,442        DEBUG      decorators           
+Вызов функции: get_message с параметрами: (<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 11749)>,), {}
 из модуля: common.utils, функции: main
-2023-07-14 22:46:06,242        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689363966.236688, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-14 22:46:06,242        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689363966.236688, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-14 22:46:06,244        DEBUG      decorators           
-Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689363966.236688, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
+2023-07-19 23:02:06,443        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689796926.4014697, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-19 23:02:06,444        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689796926.4014697, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-19 23:02:06,445        DEBUG      decorators           
+Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689796926.4014697, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
 из модуля: __main__, функции: main
-2023-07-14 22:46:06,246        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
-2023-07-14 22:46:06,248        DEBUG      decorators           
-Вызов функции: send_message с параметрами: (<socket.socket fd=516, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 2413)>, {'RESPONSE': 200}), {}
+2023-07-19 23:02:06,446        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-19 23:02:06,448        DEBUG      decorators           
+Вызов функции: send_message с параметрами: (<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 11749)>, {'RESPONSE': 200}), {}
 из модуля: common.utils, функции: main
-2023-07-14 22:46:06,249        DEBUG      decorators           Результат работы функции: None
-2023-07-14 22:46:06,249        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
-2023-07-14 22:46:06,250        INFO       server               Соединение с клиентом закрыто!
-2023-07-14 22:46:06,252        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=2414
-2023-07-14 22:46:06,254        DEBUG      decorators           
-Вызов функции: get_message с параметрами: (<socket.socket fd=648, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 2414)>,), {}
+2023-07-19 23:02:06,449        DEBUG      decorators           Результат работы функции: None
+2023-07-19 23:02:06,449        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
+2023-07-19 23:02:06,450        INFO       server               Соединение с клиентом закрыто!
+2023-07-19 23:02:06,451        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=11750
+2023-07-19 23:02:06,454        DEBUG      decorators           
+Вызов функции: get_message с параметрами: (<socket.socket fd=472, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 11750)>,), {}
 из модуля: common.utils, функции: main
-2023-07-14 22:46:06,255        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689363966.247691, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-14 22:46:06,256        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689363966.247691, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-14 22:46:06,258        DEBUG      decorators           
-Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689363966.247691, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
+2023-07-19 23:02:06,455        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689796926.4304757, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-19 23:02:06,457        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689796926.4304757, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-19 23:02:06,461        DEBUG      decorators           
+Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689796926.4304757, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
 из модуля: __main__, функции: main
-2023-07-14 22:46:06,259        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
-2023-07-14 22:46:06,261        DEBUG      decorators           
-Вызов функции: send_message с параметрами: (<socket.socket fd=648, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 2414)>, {'RESPONSE': 200}), {}
+2023-07-19 23:02:06,462        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-19 23:02:06,466        DEBUG      decorators           
+Вызов функции: send_message с параметрами: (<socket.socket fd=472, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 11750)>, {'RESPONSE': 200}), {}
 из модуля: common.utils, функции: main
-2023-07-14 22:46:06,262        DEBUG      decorators           Результат работы функции: None
-2023-07-14 22:46:06,263        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
-2023-07-14 22:46:06,264        INFO       server               Соединение с клиентом закрыто!
-2023-07-14 22:46:06,266        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=2415
-2023-07-14 22:46:06,268        DEBUG      decorators           
-Вызов функции: get_message с параметрами: (<socket.socket fd=648, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 2415)>,), {}
+2023-07-19 23:02:06,467        DEBUG      decorators           Результат работы функции: None
+2023-07-19 23:02:06,468        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
+2023-07-19 23:02:06,469        INFO       server               Соединение с клиентом закрыто!
+2023-07-19 23:02:06,470        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=11751
+2023-07-19 23:02:06,473        DEBUG      decorators           
+Вызов функции: get_message с параметрами: (<socket.socket fd=472, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 11751)>,), {}
 из модуля: common.utils, функции: main
-2023-07-14 22:46:06,269        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689363966.2646942, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-14 22:46:06,270        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689363966.2646942, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-14 22:46:06,274        DEBUG      decorators           
-Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689363966.2646942, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
+2023-07-19 23:02:06,474        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689796926.454482, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-19 23:02:06,475        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689796926.454482, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-19 23:02:06,477        DEBUG      decorators           
+Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689796926.454482, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
 из модуля: __main__, функции: main
-2023-07-14 22:46:06,275        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
-2023-07-14 22:46:06,277        DEBUG      decorators           
-Вызов функции: send_message с параметрами: (<socket.socket fd=648, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 2415)>, {'RESPONSE': 200}), {}
+2023-07-19 23:02:06,478        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-19 23:02:06,480        DEBUG      decorators           
+Вызов функции: send_message с параметрами: (<socket.socket fd=472, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 11751)>, {'RESPONSE': 200}), {}
 из модуля: common.utils, функции: main
-2023-07-14 22:46:06,277        DEBUG      decorators           Результат работы функции: None
-2023-07-14 22:46:06,278        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
-2023-07-14 22:46:06,279        INFO       server               Соединение с клиентом закрыто!
-2023-07-14 22:46:06,282        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=2416
-2023-07-14 22:46:06,284        DEBUG      decorators           
-Вызов функции: get_message с параметрами: (<socket.socket fd=648, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 2416)>,), {}
+2023-07-19 23:02:06,480        DEBUG      decorators           Результат работы функции: None
+2023-07-19 23:02:06,481        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
+2023-07-19 23:02:06,483        INFO       server               Соединение с клиентом закрыто!
+2023-07-19 23:02:06,486        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=11752
+2023-07-19 23:02:06,489        DEBUG      decorators           
+Вызов функции: get_message с параметрами: (<socket.socket fd=456, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 11752)>,), {}
 из модуля: common.utils, функции: main
-2023-07-14 22:46:06,285        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689363966.2806976, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-14 22:46:06,286        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689363966.2806976, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-14 22:46:06,288        DEBUG      decorators           
-Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689363966.2806976, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
+2023-07-19 23:02:06,490        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689796926.4664843, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-19 23:02:06,495        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689796926.4664843, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-19 23:02:06,498        DEBUG      decorators           
+Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689796926.4664843, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
 из модуля: __main__, функции: main
-2023-07-14 22:46:06,290        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
-2023-07-14 22:46:06,293        DEBUG      decorators           
-Вызов функции: send_message с параметрами: (<socket.socket fd=648, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 2416)>, {'RESPONSE': 200}), {}
+2023-07-19 23:02:06,498        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-19 23:02:06,501        DEBUG      decorators           
+Вызов функции: send_message с параметрами: (<socket.socket fd=456, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 11752)>, {'RESPONSE': 200}), {}
 из модуля: common.utils, функции: main
-2023-07-14 22:46:06,294        DEBUG      decorators           Результат работы функции: None
-2023-07-14 22:46:06,295        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
-2023-07-14 22:46:06,296        INFO       server               Соединение с клиентом закрыто!
-2023-07-14 22:46:06,297        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=2417
-2023-07-14 22:46:06,299        DEBUG      decorators           
-Вызов функции: get_message с параметрами: (<socket.socket fd=648, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 2417)>,), {}
+2023-07-19 23:02:06,502        DEBUG      decorators           Результат работы функции: None
+2023-07-19 23:02:06,502        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
+2023-07-19 23:02:06,503        INFO       server               Соединение с клиентом закрыто!
+2023-07-19 23:02:06,504        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=11753
+2023-07-19 23:02:06,506        DEBUG      decorators           
+Вызов функции: get_message с параметрами: (<socket.socket fd=488, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 11753)>,), {}
 из модуля: common.utils, функции: main
-2023-07-14 22:46:06,300        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689363966.2876995, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-14 22:46:06,302        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689363966.2876995, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-14 22:46:06,304        DEBUG      decorators           
-Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689363966.2876995, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
+2023-07-19 23:02:06,508        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689796926.4884892, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-19 23:02:06,509        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689796926.4884892, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
+2023-07-19 23:02:06,511        DEBUG      decorators           
+Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689796926.4884892, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
 из модуля: __main__, функции: main
-2023-07-14 22:46:06,304        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
-2023-07-14 22:46:06,306        DEBUG      decorators           
-Вызов функции: send_message с параметрами: (<socket.socket fd=648, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 2417)>, {'RESPONSE': 200}), {}
+2023-07-19 23:02:06,512        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
+2023-07-19 23:02:06,514        DEBUG      decorators           
+Вызов функции: send_message с параметрами: (<socket.socket fd=488, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 11753)>, {'RESPONSE': 200}), {}
 из модуля: common.utils, функции: main
-2023-07-14 22:46:06,307        DEBUG      decorators           Результат работы функции: None
-2023-07-14 22:46:06,307        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
-2023-07-14 22:46:06,308        INFO       server               Соединение с клиентом закрыто!
-2023-07-14 22:47:17,951        DEBUG      server               Запуск сервера с параметрами: ['-p', '7777', '-a', 'localhost']
-2023-07-14 22:47:17,967        DEBUG      server               порт сервера: 7777, адрес сервера: localhost
-2023-07-14 22:47:17,974        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=2421
-2023-07-14 22:47:18,017        DEBUG      decorators           
-Вызов функции: get_message с параметрами: (<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 2421)>,), {}
-из модуля: common.utils, функции: main
-2023-07-14 22:47:18,021        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689364038.0179944, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-14 22:47:18,022        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689364038.0179944, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-14 22:47:18,024        DEBUG      decorators           
-Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689364038.0179944, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
-из модуля: __main__, функции: main
-2023-07-14 22:47:18,025        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
-2023-07-14 22:47:18,027        DEBUG      decorators           
-Вызов функции: send_message с параметрами: (<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 2421)>, {'RESPONSE': 200}), {}
-из модуля: common.utils, функции: main
-2023-07-14 22:47:18,028        DEBUG      decorators           Результат работы функции: None
-2023-07-14 22:47:18,029        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
-2023-07-14 22:47:18,030        INFO       server               Соединение с клиентом закрыто!
-2023-07-14 22:47:18,031        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=2422
-2023-07-14 22:47:18,033        DEBUG      decorators           
-Вызов функции: get_message с параметрами: (<socket.socket fd=544, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 2422)>,), {}
-из модуля: common.utils, функции: main
-2023-07-14 22:47:18,034        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689364038.0279973, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-14 22:47:18,035        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689364038.0279973, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-14 22:47:18,037        DEBUG      decorators           
-Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689364038.0279973, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
-из модуля: __main__, функции: main
-2023-07-14 22:47:18,038        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
-2023-07-14 22:47:18,043        DEBUG      decorators           
-Вызов функции: send_message с параметрами: (<socket.socket fd=544, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 2422)>, {'RESPONSE': 200}), {}
-из модуля: common.utils, функции: main
-2023-07-14 22:47:18,044        DEBUG      decorators           Результат работы функции: None
-2023-07-14 22:47:18,045        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
-2023-07-14 22:47:18,046        INFO       server               Соединение с клиентом закрыто!
-2023-07-14 22:47:18,047        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=2423
-2023-07-14 22:47:18,050        DEBUG      decorators           
-Вызов функции: get_message с параметрами: (<socket.socket fd=400, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 2423)>,), {}
-из модуля: common.utils, функции: main
-2023-07-14 22:47:18,059        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689364038.0560029, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-14 22:47:18,060        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689364038.0560029, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-14 22:47:18,063        DEBUG      decorators           
-Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689364038.0560029, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
-из модуля: __main__, функции: main
-2023-07-14 22:47:18,064        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
-2023-07-14 22:47:18,067        DEBUG      decorators           
-Вызов функции: send_message с параметрами: (<socket.socket fd=400, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 2423)>, {'RESPONSE': 200}), {}
-из модуля: common.utils, функции: main
-2023-07-14 22:47:18,068        DEBUG      decorators           Результат работы функции: None
-2023-07-14 22:47:18,069        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
-2023-07-14 22:47:18,070        INFO       server               Соединение с клиентом закрыто!
-2023-07-14 22:47:18,072        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=2424
-2023-07-14 22:47:18,074        DEBUG      decorators           
-Вызов функции: get_message с параметрами: (<socket.socket fd=344, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 2424)>,), {}
-из модуля: common.utils, функции: main
-2023-07-14 22:47:18,078        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689364038.0740085, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-14 22:47:18,079        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689364038.0740085, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-14 22:47:18,081        DEBUG      decorators           
-Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689364038.0740085, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
-из модуля: __main__, функции: main
-2023-07-14 22:47:18,082        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
-2023-07-14 22:47:18,084        DEBUG      decorators           
-Вызов функции: send_message с параметрами: (<socket.socket fd=344, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 2424)>, {'RESPONSE': 200}), {}
-из модуля: common.utils, функции: main
-2023-07-14 22:47:18,085        DEBUG      decorators           Результат работы функции: None
-2023-07-14 22:47:18,086        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
-2023-07-14 22:47:18,087        INFO       server               Соединение с клиентом закрыто!
-2023-07-14 22:47:18,088        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=2425
-2023-07-14 22:47:18,090        DEBUG      decorators           
-Вызов функции: get_message с параметрами: (<socket.socket fd=556, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 2425)>,), {}
-из модуля: common.utils, функции: main
-2023-07-14 22:47:18,092        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689364038.0820093, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-14 22:47:18,094        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689364038.0820093, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-14 22:47:18,095        DEBUG      decorators           
-Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689364038.0820093, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
-из модуля: __main__, функции: main
-2023-07-14 22:47:18,096        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
-2023-07-14 22:47:18,098        DEBUG      decorators           
-Вызов функции: send_message с параметрами: (<socket.socket fd=556, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 2425)>, {'RESPONSE': 200}), {}
-из модуля: common.utils, функции: main
-2023-07-14 22:47:18,098        DEBUG      decorators           Результат работы функции: None
-2023-07-14 22:47:18,099        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
-2023-07-14 22:47:18,100        INFO       server               Соединение с клиентом закрыто!
-2023-07-19 09:23:11,366        DEBUG      server               Запуск сервера с параметрами: ['-p', '7777', '-a', 'localhost']
-2023-07-19 09:23:11,387        DEBUG      server               порт сервера: 7777, адрес сервера: localhost
-2023-07-19 09:23:11,404        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=7905
-2023-07-19 09:23:11,448        DEBUG      decorators           
-Вызов функции: get_message с параметрами: (<socket.socket fd=496, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 7905)>,), {}
-из модуля: common.utils, функции: main
-2023-07-19 09:23:11,449        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689747791.4449441, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-19 09:23:11,450        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689747791.4449441, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-19 09:23:11,452        DEBUG      decorators           
-Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689747791.4449441, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
-из модуля: __main__, функции: main
-2023-07-19 09:23:11,454        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
-2023-07-19 09:23:11,456        DEBUG      decorators           
-Вызов функции: send_message с параметрами: (<socket.socket fd=496, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 7905)>, {'RESPONSE': 200}), {}
-из модуля: common.utils, функции: main
-2023-07-19 09:23:11,458        DEBUG      decorators           Результат работы функции: None
-2023-07-19 09:23:11,459        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
-2023-07-19 09:23:11,461        INFO       server               Соединение с клиентом закрыто!
-2023-07-19 09:23:11,462        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=7906
-2023-07-19 09:23:11,465        DEBUG      decorators           
-Вызов функции: get_message с параметрами: (<socket.socket fd=312, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 7906)>,), {}
-из модуля: common.utils, функции: main
-2023-07-19 09:23:11,466        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689747791.4609473, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-19 09:23:11,467        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689747791.4609473, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-19 09:23:11,480        DEBUG      decorators           
-Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689747791.4609473, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
-из модуля: __main__, функции: main
-2023-07-19 09:23:11,482        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
-2023-07-19 09:23:11,484        DEBUG      decorators           
-Вызов функции: send_message с параметрами: (<socket.socket fd=312, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 7906)>, {'RESPONSE': 200}), {}
-из модуля: common.utils, функции: main
-2023-07-19 09:23:11,485        DEBUG      decorators           Результат работы функции: None
-2023-07-19 09:23:11,486        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
-2023-07-19 09:23:11,487        INFO       server               Соединение с клиентом закрыто!
-2023-07-19 09:23:11,880        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=7902
-2023-07-19 09:23:11,887        DEBUG      decorators           
-Вызов функции: get_message с параметрами: (<socket.socket fd=512, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 7902)>,), {}
-из модуля: common.utils, функции: main
-2023-07-19 09:23:11,943        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689747791.9380846, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-19 09:23:11,944        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689747791.9380846, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-19 09:23:11,947        DEBUG      decorators           
-Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689747791.9380846, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
-из модуля: __main__, функции: main
-2023-07-19 09:23:11,949        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
-2023-07-19 09:23:11,952        DEBUG      decorators           
-Вызов функции: send_message с параметрами: (<socket.socket fd=512, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 7902)>, {'RESPONSE': 200}), {}
-из модуля: common.utils, функции: main
-2023-07-19 09:23:11,954        DEBUG      decorators           Результат работы функции: None
-2023-07-19 09:23:11,956        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
-2023-07-19 09:23:11,957        INFO       server               Соединение с клиентом закрыто!
-2023-07-19 09:23:11,958        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=7903
-2023-07-19 09:23:11,962        DEBUG      decorators           
-Вызов функции: get_message с параметрами: (<socket.socket fd=512, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 7903)>,), {}
-из модуля: common.utils, функции: main
-2023-07-19 09:23:11,964        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689747791.9290838, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-19 09:23:11,967        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689747791.9290838, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-19 09:23:11,970        DEBUG      decorators           
-Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689747791.9290838, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
-из модуля: __main__, функции: main
-2023-07-19 09:23:11,972        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
-2023-07-19 09:23:11,977        DEBUG      decorators           
-Вызов функции: send_message с параметрами: (<socket.socket fd=512, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 7903)>, {'RESPONSE': 200}), {}
-из модуля: common.utils, функции: main
-2023-07-19 09:23:11,978        DEBUG      decorators           Результат работы функции: None
-2023-07-19 09:23:11,979        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
-2023-07-19 09:23:11,980        INFO       server               Соединение с клиентом закрыто!
-2023-07-19 09:23:11,981        INFO       server               Установлено соединение с клиентом, адрес: client_addr='127.0.0.1', порт: client_port=7904
-2023-07-19 09:23:11,983        DEBUG      decorators           
-Вызов функции: get_message с параметрами: (<socket.socket fd=492, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 7904)>,), {}
-из модуля: common.utils, функции: main
-2023-07-19 09:23:11,984        DEBUG      decorators           Результат работы функции: {'ACTION': 'PRESENCE', 'TIME': 1689747791.943086, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-19 09:23:11,987        INFO       server               Полученное сообщение от клиента: {'ACTION': 'PRESENCE', 'TIME': 1689747791.943086, 'USER': {'ACCOUNT_NAME': 'GUEST'}}
-2023-07-19 09:23:11,993        DEBUG      decorators           
-Вызов функции: process_client_message с параметрами: ({'ACTION': 'PRESENCE', 'TIME': 1689747791.943086, 'USER': {'ACCOUNT_NAME': 'GUEST'}},), {}
-из модуля: __main__, функции: main
-2023-07-19 09:23:11,996        DEBUG      decorators           Результат работы функции: {'RESPONSE': 200}
-2023-07-19 09:23:12,000        DEBUG      decorators           
-Вызов функции: send_message с параметрами: (<socket.socket fd=492, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 7904)>, {'RESPONSE': 200}), {}
-из модуля: common.utils, функции: main
-2023-07-19 09:23:12,002        DEBUG      decorators           Результат работы функции: None
-2023-07-19 09:23:12,003        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
-2023-07-19 09:23:12,004        INFO       server               Соединение с клиентом закрыто!
+2023-07-19 23:02:06,515        DEBUG      decorators           Результат работы функции: None
+2023-07-19 23:02:06,516        INFO       server               Клиенту отправлен ответ: {'RESPONSE': 200}
+2023-07-19 23:02:06,518        INFO       server               Соединение с клиентом закрыто!

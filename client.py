@@ -1,4 +1,5 @@
 """ Скрипт клиентской программы асинхронного чата """
+import argparse
 import sys
 from pprint import pprint
 from sys import argv
@@ -10,13 +11,60 @@ import logging
 from common.utils import get_message, send_message
 from common.variables import RESPONSE, ERROR, LOW_PORT_RANGE, HIGH_PORT_RANGE, \
     DEFAULT_PORT, DEFAULT_IP_ADDRESS, GUEST, ACTION, PRESENCE, TIME, USER, \
-    ACCOUNT_NAME, CLIENT_LOGGER
+    ACCOUNT_NAME, CLIENT_LOGGER, CLIENT_SEND_MODE, CLIENT_LISTEN_MODE
 # подтягиваем готовый конфиг логгера
 import logs.configs.client_log_config
 # подтягиваем декоратор для логирования работы функций
 from common.decorators import logging_deco, LogForFunc
 # запуск логирования клиента (получаем клиент. логгер из файла конфига)
 LOGGER = logging.getLogger(CLIENT_LOGGER)
+
+
+# @logging_deco
+@LogForFunc()
+def run_args_parser():
+    """
+    Разбирает параметры, переданные при запуске скрипта, например:
+    client.py -a 192.168.38.62 -p 4567 - m send
+    :return: кортеж (адрес_сервера, порт_сервера, режим_работы_клиента)
+    """
+
+    LOGGER.debug(f'Параметры вызова: {argv[1:]=}')
+
+    # создаём экземпляр парсера и добавляем параметры
+    parser = argparse.ArgumentParser(description='Парсер параметров запуска '
+                                                 'скрипта клиента')
+    parser.add_argument('-a', '--addr', default=DEFAULT_IP_ADDRESS, type=str,
+                        help=f'IP-адрес сервера, по умолчанию '
+                             f'{DEFAULT_IP_ADDRESS}', nargs='?')
+    parser.add_argument('-p', '--port', default=DEFAULT_PORT, type=int,
+                        help=f'Порт сервера, по умолчанию {DEFAULT_PORT}',
+                        nargs='?')
+    parser.add_argument('-m', '--mode', choices=[CLIENT_SEND_MODE,
+                                                 CLIENT_LISTEN_MODE],
+                        help=f'Режим работы клиента: {CLIENT_SEND_MODE} / '
+                             f'{CLIENT_LISTEN_MODE}',
+                        nargs='?')
+
+    # разбираем параметры, переданные при запуске скрипта (без имени скрипта)
+    run_args = parser.parse_args(sys.argv[1:])
+    serv_addr = run_args.addr
+    client_mode = run_args.mode
+
+    try:
+        serv_port = int(run_args.port)
+        LOGGER.debug(f'Cервер - адрес: {serv_addr}, порт: {serv_port}')
+
+        # валидируем полученный порт сервера
+        if serv_port < LOW_PORT_RANGE or serv_port > HIGH_PORT_RANGE:
+            raise ValueError
+    except ValueError as err:
+        LOGGER.critical(f'Порт сервера должен быть числом в диапазоне '
+                        f'{LOW_PORT_RANGE}-{HIGH_PORT_RANGE}. '
+                        f'Получено: "{serv_port}". Ошибка: {err}')
+        exit(1)
+
+    return serv_addr, serv_port, client_mode
 
 
 # @logging_deco
@@ -62,34 +110,15 @@ def process_answ(message: dict) -> str:
 
 
 def main() -> None:
-    """
-    Загрузка параметров командной строки клиента (нужно передать адрес и порт
-    сервера), например:
-    # client.py 192.168.38.62 4567
-    # server.py -p 4567 -a 192.168.38.62
-    :return:
-    """
+    # получаем параметры запуска скрипта
+    serv_addr, serv_port, client_mode = run_args_parser()
+    LOGGER.info(f'Запущен клиент, сервер: {serv_addr}:{serv_port}, '
+                f'режим: {client_mode}')
 
-    LOGGER.debug(f'Параметры вызова: {argv[1:]=}')
-    try:
-        # в 1-м параметре запуска клиентского скрипта ждём адрес, 2й - порт
-        serv_addr = argv[1]
-        serv_port = int(argv[2])
-        LOGGER.debug(f'Cервер - адрес: {serv_addr}, порт: {serv_port}')
 
-        # валидируем полученный порт сервера
-        if serv_port < LOW_PORT_RANGE or serv_port > HIGH_PORT_RANGE:
-            raise ValueError
-    except IndexError as err:
-        serv_addr = DEFAULT_IP_ADDRESS
-        serv_port = DEFAULT_PORT
-        LOGGER.debug(f'Используются значения адреса и порта сервера '
-                     f'по умолчанию: {DEFAULT_IP_ADDRESS}:{DEFAULT_PORT}')
-    except ValueError as err:
-        LOGGER.critical(f'Порт сервера должен быть числом в диапазоне '
-                        f'{LOW_PORT_RANGE}-{HIGH_PORT_RANGE}. '
-                        f'Получено: "{serv_port}". Ошибка: {err}')
-        exit(1)
+    # ПРОДОЛЖАЕМ ЗДЕСЬ!
+
+
 
     # создаем объект клиент. сокета (сетевой, потоковый), подключаемся к серверу
     JIM_socket = socket(AF_INET, SOCK_STREAM)
